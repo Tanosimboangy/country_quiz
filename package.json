@@ -9,7 +9,8 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Tanosimboangy/country-quiz.git"
-  },"browserslist": [
+  },
+  "browserslist": [
     "last 1 chrome versions"
   ],
   "author": "",
@@ -19,6 +20,7 @@
   },
   "homepage": "https://github.com/Tanosimboangy/country-quiz#readme",
   "dependencies": {
+    "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   }

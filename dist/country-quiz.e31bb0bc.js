@@ -29786,9 +29786,6 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-// Choosing the right API
-// Fetch the data from that API
-// Specify the name and the capital of the country
 function App() {
   const [value, setValue] = (0, _react.useState)([]);
 
@@ -29801,15 +29798,14 @@ function App() {
   (0, _react.useEffect)(() => {
     fetchingData();
   }, []);
-  const randomIndex1 = Math.floor(Math.random() * value.length);
-  console.log(randomIndex1); // const randomIndex2 = Math.floor(Math.random() * value.length);
-  // const randomIndex3 = Math.floor(Math.random() * value.length);
-  // const randomIndex4 = Math.floor(Math.random() * value.length);
 
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, randomIndex1.map(item => {
-    /*#__PURE__*/
-    _react.default.createElement("h1", null, item.name);
-  }));
+  function randomItem(items = []) {
+    return items[Math.floor(Math.random() * items.length)];
+  }
+
+  const randomOpt1 = randomItem(value);
+  console.log(randomOpt1);
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", null, "button"));
 }
 
 var _default = App;
