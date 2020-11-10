@@ -29772,7 +29772,71 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"component/App.js":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"component/Diaplay.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// const API_CAPITAL = "https://restcountries.eu/rest/v2/capital/"
+function Display({
+  value,
+  collectionItems,
+  item1,
+  item2,
+  item3,
+  item4,
+  fetchingData
+}) {
+  // // Declaration UseState with Fetching the data for the capital
+  // const [data, setData] = useState([]);
+  // async function fetchingCapitalData() {
+  //     const data = await fetch(API_CAPITAL);
+  //     const resp = await data.json()
+  //     setData(resp);
+  // }
+  // useEffect(() => {
+  //     fetchingCapitalData()
+  // }, [])
+  // console.log(data);
+  function handleClickButton(e) {
+    console.log(e.currentTarget.value);
+    console.log(value[item1].capital, "is the capital of", value[item1].name);
+    console.log(value[item2].capital, "is the capital of", value[item2].name);
+    console.log(value[item3].capital, "is the capital of", value[item3].name);
+    console.log(value[item4].capital, "is the capital of", value[item4].name); // if (e.currentTarget.value === value[item1].capital) {
+    //     console.log("It is true item1");
+    // } else if (e.currentTarget.value === value[item2].capital) {
+    //     console.log("It is true item2");
+    // } else if (e.currentTarget.value === value[item3].capital) {
+    //     console.log("It is true item3");
+    // } else if (e.currentTarget.value === value[item4].capital) {
+    //     console.log("It is true item4");
+    // }
+  }
+
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/_react.default.createElement("h2", null, value[item1].capital, " is the capital of?"), collectionItems.map(map => {
+    return /*#__PURE__*/_react.default.createElement("div", {
+      key: value[map].name
+    }, /*#__PURE__*/_react.default.createElement("button", {
+      value: value[map].name,
+      onClick: handleClickButton,
+      className: "buttons"
+    }, value[map].name, /*#__PURE__*/_react.default.createElement("br", null)));
+  })));
+}
+
+var _default = Display;
+exports.default = _default;
+},{"react":"node_modules/react/index.js"}],"component/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29781,6 +29845,10 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
+
+var _Diaplay = _interopRequireDefault(require("./Diaplay"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
@@ -29809,25 +29877,23 @@ function App() {
     return null;
   }
 
-  console.log(value[item1].name);
-  console.log(value[item1].capital);
-  console.log(value[item1].flag);
-  const groupItems = [item1, item4, item2, item3]; // const collectionItems = groupItems.sort((a, b) => b - a);
-
-  return /*#__PURE__*/_react.default.createElement("div", {
-    className: "container"
-  }, /*#__PURE__*/_react.default.createElement("h2", null, value[item1].capital, " is the capital of?"), groupItems.map(map => {
-    return /*#__PURE__*/_react.default.createElement("div", {
-      key: value[map].name
-    }, /*#__PURE__*/_react.default.createElement("button", {
-      className: "buttons"
-    }, value[map].name));
-  }));
+  const groupItems = [item1, item4, item2, item3];
+  const collectionItems = groupItems.sort((a, b) => b - a);
+  return /*#__PURE__*/_react.default.createElement(_Diaplay.default, {
+    value: value,
+    collectionItems: collectionItems,
+    item1: item1,
+    item2: item2,
+    item3: item3,
+    item4: item4,
+    setValue: setValue,
+    fetchingData: fetchingData
+  });
 }
 
 var _default = App;
 exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./Diaplay":"component/Diaplay.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));

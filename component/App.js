@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Display from "./Diaplay";
 const API = "https://restcountries.eu/rest/v2/all"
 function App() {
 
@@ -19,27 +20,11 @@ function App() {
     if (!value.length) {
         return null;
     }
-    console.log(value[item1].name);
-    console.log(value[item1].capital);
-    console.log(value[item1].flag);
     const groupItems = [item1, item4, item2, item3]
-    // const collectionItems = groupItems.sort((a, b) => b - a);
+    const collectionItems = groupItems.sort((a, b) => b - a);
 
     return (
-        <div className="container">
-            <h2>{value[item1].capital} is the capital of?</h2>
-            {/* <img style={{maxWidth:"100%"}} src={value[item1].flag} />
-            <h2>Which country does this flag belong to?</h2> */}
-            {groupItems.map(map => {
-                return (
-                    <div key={value[map].name}>
-                        <button className="buttons">
-                            {value[map].name}
-                        </button>   
-                    </div>
-                )
-                })}
-        </div>
+        <Display value={value} collectionItems={collectionItems} item1={item1} item2={item2} item3={item3} item4={item4} setValue={setValue} fetchingData={fetchingData} />
     )
 }
 
