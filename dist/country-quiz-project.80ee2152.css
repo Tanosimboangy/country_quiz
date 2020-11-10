@@ -53,5 +53,8 @@ body .container .correct:hover {
 body .container .answered {
   background-color: red;
 }
+body .container .answered:hover {
+  background-color: red;
+}
 
 /*# sourceMappingURL=/country-quiz-project.80ee2152.css.map */
