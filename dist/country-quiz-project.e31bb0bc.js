@@ -29772,7 +29772,7 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"component/Diaplay.js":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"component/ButtonToNext.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29782,7 +29782,42 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _reactDom = require("react-dom");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function ButtonToNext({
+  fetchingData,
+  correct
+}) {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, correct ? /*#__PURE__*/_react.default.createElement("button", {
+    onClick: fetchingData
+  }, "Next") : /*#__PURE__*/_react.default.createElement(_reactDom.Link, {
+    to: "/tryAgain"
+  }, /*#__PURE__*/_react.default.createElement("button", {
+    className: "next"
+  }, "Next")));
+}
+
+var _default = ButtonToNext;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js"}],"component/Diaplay.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _ButtonToNext = _interopRequireDefault(require("./ButtonToNext"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 // const API_CAPITAL = "https://restcountries.eu/rest/v2/capital/"
 function Display({
@@ -29805,21 +29840,41 @@ function Display({
   //     fetchingCapitalData()
   // }, [])
   // console.log(data);
+  const [correct, setCorrect] = (0, _react.useState)(false);
+  const [answered, setAnswered] = (0, _react.useState)(false);
+
   function handleClickButton(e) {
-    console.log(e.currentTarget.value);
-    console.log(value[item1].capital, "is the capital of", value[item1].name);
-    console.log(value[item2].capital, "is the capital of", value[item2].name);
-    console.log(value[item3].capital, "is the capital of", value[item3].name);
-    console.log(value[item4].capital, "is the capital of", value[item4].name); // if (e.currentTarget.value === value[item1].capital) {
-    //     console.log("It is true item1");
-    // } else if (e.currentTarget.value === value[item2].capital) {
-    //     console.log("It is true item2");
-    // } else if (e.currentTarget.value === value[item3].capital) {
-    //     console.log("It is true item3");
-    // } else if (e.currentTarget.value === value[item4].capital) {
-    //     console.log("It is true item4");
+    setAnswered(true);
+    console.log(e.target.dataset);
+
+    if (e.target.dataset.value === value[item1].name) {
+      e.target.classList.add("correct");
+      setCorrect(true);
+    } else {
+      e.target.classList.add("incorrect");
+      setAnswered(false);
+    } // function handleAnswers (e) {
+    //     setIsQuestionAnswered(true)
+    //     if ((countriesName[randomNumber1].name) === (e.target.dataset.value)) {
+    //     setIsAnswerCorrect(true)
+    //     e.target.classList.add("correct")
+    //     } else {
+    //     const indexOfTheRightAnswer = arrOfSortedRandomNumber.find(index => {
+    //         return countriesName[index].name === countriesName[randomNumber1].name
+    //     })
+    //     const rightAnswer = countriesName[indexOfTheRightAnswer].name
+    //     setIsAnswerCorrect(false)
+    //     e.target.classList.add("incorrect")
+    //     const container = e.target.parentElement
+    //     const buttons = Array.from(container.querySelectorAll("button"))
+    //     const rightButton = buttons.find(button => button.dataset.value == rightAnswer)
+    //     rightButton.classList.add("correct")
+    //     }
     // }
+
   }
+
+  console.log(correct); //  console.log(answered);
 
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
     className: "container"
@@ -29828,15 +29883,19 @@ function Display({
       key: value[map].name
     }, /*#__PURE__*/_react.default.createElement("button", {
       value: value[map].name,
+      "data-value": value[map].name,
       onClick: handleClickButton,
       className: "buttons"
     }, value[map].name, /*#__PURE__*/_react.default.createElement("br", null)));
-  })));
+  })), answered && /*#__PURE__*/_react.default.createElement(_ButtonToNext.default, {
+    fetchingData: fetchingData,
+    correct: correct
+  }));
 }
 
 var _default = Display;
 exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"component/App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./ButtonToNext":"component/ButtonToNext.js"}],"component/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {

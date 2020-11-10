@@ -40,5 +40,16 @@ body {
             background: #F9A826;
             color: white;
         }
+        .correct {
+            background-color: green;
+            color: white;
+        }
+        .correct:hover {
+            background-color: green;
+            color: white;
+        }
+        .answered {
+            background-color: red;
+        }
     }
 }

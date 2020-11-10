@@ -42,5 +42,16 @@ body .container .buttons:hover {
   background: #F9A826;
   color: white;
 }
+body .container .correct {
+  background-color: green;
+  color: white;
+}
+body .container .correct:hover {
+  background-color: green;
+  color: white;
+}
+body .container .answered {
+  background-color: red;
+}
 
 /*# sourceMappingURL=/country-quiz-project.80ee2152.css.map */

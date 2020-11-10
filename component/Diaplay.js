@@ -1,6 +1,7 @@
-import React
-// { useEffect, useState }
+import React, { useState }
+// { useEffect }
  from "react";
+ import ButtonToNext from "./ButtonToNext";
 
 // const API_CAPITAL = "https://restcountries.eu/rest/v2/capital/"
 
@@ -18,24 +19,42 @@ function Display({value, collectionItems, item1, item2, item3, item4, fetchingDa
     // }, [])
     // console.log(data);
 
-    function handleClickButton(e) {
-        console.log(e.currentTarget.value);
-        console.log(value[item1].capital, "is the capital of", value[item1].name);
-        console.log(value[item2].capital, "is the capital of", value[item2].name);
-        console.log(value[item3].capital, "is the capital of", value[item3].name);
-        console.log(value[item4].capital, "is the capital of", value[item4].name);
+    const [correct, setCorrect] = useState(false);
+    const [answered, setAnswered] = useState(false);
 
-        // if (e.currentTarget.value === value[item1].capital) {
-        //     console.log("It is true item1");
-        // } else if (e.currentTarget.value === value[item2].capital) {
-        //     console.log("It is true item2");
-        // } else if (e.currentTarget.value === value[item3].capital) {
-        //     console.log("It is true item3");
-        // } else if (e.currentTarget.value === value[item4].capital) {
-        //     console.log("It is true item4");
+    function handleClickButton(e) {
+        setAnswered(true);
+        console.log(e.target.dataset);
+        if ((e.target.dataset.value) === (value[item1].name)) {
+            e.target.classList.add("correct");
+            setCorrect(true);
+        } else {
+
+            e.target.classList.add("incorrect")
+            setAnswered(false);
+        }
+        
+        // function handleAnswers (e) {
+        //     setIsQuestionAnswered(true)
+        //     if ((countriesName[randomNumber1].name) === (e.target.dataset.value)) {
+        //     setIsAnswerCorrect(true)
+        //     e.target.classList.add("correct")
+        //     } else {
+        //     const indexOfTheRightAnswer = arrOfSortedRandomNumber.find(index => {
+        //         return countriesName[index].name === countriesName[randomNumber1].name
+        //     })
+        //     const rightAnswer = countriesName[indexOfTheRightAnswer].name
+        //     setIsAnswerCorrect(false)
+        //     e.target.classList.add("incorrect")
+        //     const container = e.target.parentElement
+        //     const buttons = Array.from(container.querySelectorAll("button"))
+        //     const rightButton = buttons.find(button => button.dataset.value == rightAnswer)
+        //     rightButton.classList.add("correct")
+        //     }
         // }
     }
-     
+     console.log(correct);
+    //  console.log(answered);
     
     return (
         <>
@@ -46,13 +65,14 @@ function Display({value, collectionItems, item1, item2, item3, item4, fetchingDa
                         <div key={value[map].name}>
                             <button 
                                 value={value[map].name}
+                                data-value={value[map].name}
                                 onClick={handleClickButton}
                                 className="buttons">
                                 {value[map].name}<br />
                             </button>
                         </div>
                     )
-                    })}
+                })}
             </div>
             {/* <div className="container">
                 <img style={{maxWidth:"100%"}} src={value[item1].flag} />
@@ -70,6 +90,11 @@ function Display({value, collectionItems, item1, item2, item3, item4, fetchingDa
                     )
                     })}
             </div> */}
+            {answered && 
+                <ButtonToNext 
+                fetchingData={fetchingData}
+                correct={correct}
+            />}
         </>
     )
 }
