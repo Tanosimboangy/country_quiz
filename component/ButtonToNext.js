@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function ButtonToNext({ fetchingData, correct, setAnswered }) {
+function ButtonToNext({ fetchingData, correct }) {
     return (
         <>
             {correct ?

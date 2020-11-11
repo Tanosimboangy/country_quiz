@@ -33904,8 +33904,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function ButtonToNext({
   fetchingData,
-  correct,
-  setAnswered
+  correct
 }) {
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, correct ? /*#__PURE__*/_react.default.createElement("button", {
     className: "btn_next",
@@ -33949,23 +33948,15 @@ function Display({
   const [answered, setAnswered] = (0, _react.useState)(false);
 
   function handleClickButton(e) {
-    // const allbtn = Array.from(e.target.parentElement.querySelectorAll(".buttons"))
-    // allbtn.map(item => item.setAttribute("disabled", ""))
     setAnswered(true);
 
     if (e.target.dataset.value === value[item1].name) {
       e.target.classList.add("correct");
-      setCorrect(true); // setCount(prev => prev + 1);
+      setCorrect(true);
+      setCount(prev => prev + 1);
     } else {
       setCorrect(false);
-      e.target.classList.add("answered"); // const correctAsnwer = collectionItems.find(item => {
-      //     return value[item].name == value[item1].name
-      // })
-      // const trueAnswer = value[correctAsnwer].name
-      // console.log(trueAnswer);
-      // const selected = allbtn.find(item => item.dataset.value === trueAnswer)
-      // selected.classList.add("correct")
-      // selected.className = "correct";
+      e.target.classList.add("answered");
     }
   }
 
@@ -34042,7 +34033,6 @@ function App() {
   const item4 = Math.floor(Math.random() * value.length);
 
   if (!value.length || item1 === item2 || item1 === item3 || item1 === item4 || item2 === item3 || item2 === item4 || item3 === item4) {
-    console.log("Hey same index");
     return null;
   }
 

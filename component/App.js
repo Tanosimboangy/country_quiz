@@ -30,7 +30,6 @@ function App() {
         item2 === item4 ||
         item3 === item4
         ) {
-          console.log("Hey same index");
           return null
         }
 
