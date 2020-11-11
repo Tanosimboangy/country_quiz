@@ -33869,14 +33869,20 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function Restart({
   fetchingData,
-  count
+  count,
+  setCount
 }) {
+  function handleStart() {
+    fetchingData();
+    setCount(0);
+  }
+
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "restart"
   }, /*#__PURE__*/_react.default.createElement("h2", null, "Result"), /*#__PURE__*/_react.default.createElement("p", null, "You got ", count, " correct answers"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/"
   }, /*#__PURE__*/_react.default.createElement("button", {
-    onClick: fetchingData
+    onClick: handleStart
   }, "Try again")));
 }
 
@@ -33901,16 +33907,14 @@ function ButtonToNext({
   correct,
   setAnswered
 }) {
-  function handleFetching() {
-    fetchingData();
-    setAnswered(false);
-  }
-
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, correct ? /*#__PURE__*/_react.default.createElement("button", {
-    onClick: handleFetching
+    className: "btn_next",
+    onClick: fetchingData
   }, "Next") : /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/restart"
-  }, /*#__PURE__*/_react.default.createElement("button", null, "Next")));
+  }, /*#__PURE__*/_react.default.createElement("button", {
+    className: "btn_next"
+  }, "Next")));
 }
 
 var _default = ButtonToNext;
@@ -33951,25 +33955,29 @@ function Display({
 
     if (e.target.dataset.value === value[item1].name) {
       e.target.classList.add("correct");
-      setCorrect(true);
-      setCount(prev => prev + 1);
+      setCorrect(true); // setCount(prev => prev + 1);
     } else {
       setCorrect(false);
-      e.target.classList.add("answered"); // setAnswered(false);
-      // const correctAsnwer = collectionItems.find(item => {
+      e.target.classList.add("answered"); // const correctAsnwer = collectionItems.find(item => {
       //     return value[item].name == value[item1].name
       // })
       // const trueAnswer = value[correctAsnwer].name
+      // console.log(trueAnswer);
       // const selected = allbtn.find(item => item.dataset.value === trueAnswer)
       // selected.classList.add("correct")
+      // selected.className = "correct";
     }
   }
 
-  console.log(count);
   const random = Math.floor(Math.random() * 2);
+
+  if (!value[item1].capital || !value[item1].flag) {
+    fetchingData();
+  }
+
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h1", null, "COUNTRY QUIZ"), /*#__PURE__*/_react.default.createElement("div", {
     className: "container"
-  }, random === 0 ? /*#__PURE__*/_react.default.createElement("h2", null, value[item1].capital && value[item1].capital, " is the capital of?") : /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
+  }, random === 0 ? /*#__PURE__*/_react.default.createElement("h2", null, value[item1].capital ? value[item1].capital : "", " is the capital of?") : /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
     src: value[item1].flag,
     className: "flag"
   }), /*#__PURE__*/_react.default.createElement("h2", null, "Which country does this flag belong to?")), collectionItems.map(map => {
@@ -34033,7 +34041,8 @@ function App() {
   const item3 = Math.floor(Math.random() * value.length);
   const item4 = Math.floor(Math.random() * value.length);
 
-  if (!value.length) {
+  if (!value.length || item1 === item2 || item1 === item3 || item1 === item4 || item2 === item3 || item2 === item4 || item3 === item4) {
+    console.log("Hey same index");
     return null;
   }
 
@@ -34055,10 +34064,13 @@ function App() {
     fetchingData: fetchingData
   })), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/restart"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "container"
   }, /*#__PURE__*/_react.default.createElement(_Restart.default, {
     count: count,
+    setCount: setCount,
     fetchingData: fetchingData
-  })))));
+  }))))));
 }
 
 var _default = App;

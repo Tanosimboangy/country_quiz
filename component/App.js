@@ -20,23 +20,36 @@ function App() {
     const item2 = Math.floor(Math.random() * value.length)
     const item3 = Math.floor(Math.random() * value.length)
     const item4 = Math.floor(Math.random() * value.length)
-    if (!value.length) {
-        return null;
-    }
+
+    if (
+        !value.length ||
+        item1 === item2 ||
+        item1 === item3 ||
+        item1 === item4 ||
+        item2 === item3 ||
+        item2 === item4 ||
+        item3 === item4
+        ) {
+          console.log("Hey same index");
+          return null
+        }
+
     const groupItems = [item1, item4, item2, item3]
     const collectionItems = groupItems.sort((a, b) => b - a);
     return (
         <div>
             <Router >
-            <Switch>
-                <Route exact path="/">
-                    <Display value={value} collectionItems={collectionItems} count={count} setCount={setCount} item1={item1} item2={item2} item3={item3} item4={item4} setValue={setValue} fetchingData={fetchingData} />
-                </Route>
-                <Route path="/restart">
-                    <Restart count={count} fetchingData={fetchingData} />
-                </Route>
-            </Switch>
-        </ Router>
+                <Switch>
+                    <Route exact path="/">
+                        <Display value={value} collectionItems={collectionItems} count={count} setCount={setCount} item1={item1} item2={item2} item3={item3} item4={item4} setValue={setValue} fetchingData={fetchingData} />
+                    </Route>
+                    <Route path="/restart">
+                        <div className="container">
+                            <Restart count={count} setCount={setCount} fetchingData={fetchingData} />
+                        </div>
+                    </Route>
+                </Switch>
+            </ Router>
         </div>
     )
 }

@@ -1,6 +1,6 @@
 body {
   padding: 0 16px;
-  margin: 0;
+  margin: 15px;
   background: url(/background.59c06501.png);
   max-width: 100%;
   background-position: 50% 50%;
@@ -85,6 +85,10 @@ body .container .answered {
 }
 body .container .answered:hover {
   background-color: red;
+  background-image: url(/cancel-24px.64a71567.svg);
+  background-repeat: no-repeat;
+  background-position: 97% 50%;
+  fill: white;
 }
 body .btn_next {
   border: 1px solid blue;
@@ -93,6 +97,43 @@ body .btn_next {
   outline: none;
   border-radius: 10px;
   margin-top: 10px;
+  background: #F9A826;
+}
+body .restart h2 {
+  font-style: normal;
+  font-size: 24px;
+  line-height: 36px;
+  color: #2f527b;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+body .restart p {
+  font-style: normal;
+  font-size: 24px;
+  line-height: 36px;
+  color: #2f527b;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+body .restart button {
+  width: 209px;
+  height: 62px;
+  border: 2px solid #1d355d;
+  box-sizing: border-box;
+  border-radius: 12px;
+  background: #fff;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  color: #1d355d;
+  outline: none;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+body .restart button:hover {
   background: #F9A826;
 }
 
