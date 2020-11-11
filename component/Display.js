@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ButtonToNext from "./ButtonToNext";
 
- function Display({ value, collectionItems, item1, fetchingData,count, setCount }) {
+function Display({ value, collectionItems, item1, fetchingData, count, setCount }) {
 
     const [correct, setCorrect] = useState(false);
     const [answered, setAnswered] = useState(false);
@@ -13,7 +13,7 @@ import ButtonToNext from "./ButtonToNext";
         if ((e.target.dataset.value) === (value[item1].name)) {
             e.target.classList.add("correct");
             setCorrect(true);
-            // setCount(prev => prev + 1);
+            setCount(prev => prev + 1);
         } else {
             setCorrect(false);
             e.target.classList.add("answered");
@@ -26,36 +26,39 @@ import ButtonToNext from "./ButtonToNext";
             // selected.classList.add("correct")
         }
     }
+    console.log(count);
     const random = Math.floor(Math.random() * 2);
     return (
         <>
             <h1>COUNTRY QUIZ</h1>
             <div className="container">
-            {random === 0  
-                ? <h2>{value[item1].capital && value[item1].capital} is the capital of?</h2>
-                : (<div>
-                    <img src={value[item1].flag} className="flag"/>
-                    <h2>Which country does this flag belong to?</h2>
-                </div>)
-            }
-            {collectionItems.map(map => {
-                return (
-                    <div key={value[map].name}>
-                        <button 
-                            value={value[map].name}
-                            data-value={value[map].name}
-                            onClick={handleClickButton}
-                            className="buttons">
-                            {value[map].name}<br />
-                        </button>
-                    </div>
+                {random === 0
+                    ? <h2>{value[item1].capital && value[item1].capital} is the capital of?</h2>
+                    : (<div>
+                        <img src={value[item1].flag} className="flag" />
+                        <h2>Which country does this flag belong to?</h2>
+                    </div>)
+                }
+                {collectionItems.map(map => {
+                    return (
+                        <div key={value[map].name}>
+                            <button
+                                value={value[map].name}
+                                data-value={value[map].name}
+                                onClick={handleClickButton}
+                                className="buttons">
+                                {value[map].name}<br />
+                            </button>
+                        </div>
                     )
                 })}
-                {answered && <ButtonToNext 
-                    count={count} 
-                    fetchingData={fetchingData} 
-                    correct={correct} 
+                {answered && <ButtonToNext
+                    count={count}
+                    fetchingData={fetchingData}
+                    correct={correct}
+                    setAnswered={setAnswered}
                 />}
+
             </div>
         </>
     )
@@ -63,5 +66,3 @@ import ButtonToNext from "./ButtonToNext";
 
 export default Display;
 
-{/* <img style={{maxWidth:"100%"}} src={value[item1].flag} />
-<h2>Which country does this flag belong to?</h2> */}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 import Restart from "./Restart";
-import Display from "./Diaplay";
+import Display from "./Display";
 
 const API = "https://restcountries.eu/rest/v2/all";
 

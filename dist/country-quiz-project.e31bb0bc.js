@@ -33892,24 +33892,30 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _reactDom = require("react-dom");
+var _reactRouterDom = require("react-router-dom");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function ButtonToNext({
   fetchingData,
-  correct
+  correct,
+  setAnswered
 }) {
+  function handleFetching() {
+    fetchingData();
+    setAnswered(false);
+  }
+
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, correct ? /*#__PURE__*/_react.default.createElement("button", {
-    onClick: fetchingData
-  }, "Next") : /*#__PURE__*/_react.default.createElement(_reactDom.Link, {
+    onClick: handleFetching
+  }, "Next") : /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/restart"
   }, /*#__PURE__*/_react.default.createElement("button", null, "Next")));
 }
 
 var _default = ButtonToNext;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js"}],"component/Diaplay.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"component/Display.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33945,7 +33951,8 @@ function Display({
 
     if (e.target.dataset.value === value[item1].name) {
       e.target.classList.add("correct");
-      setCorrect(true); // setCount(prev => prev + 1);
+      setCorrect(true);
+      setCount(prev => prev + 1);
     } else {
       setCorrect(false);
       e.target.classList.add("answered"); // setAnswered(false);
@@ -33958,6 +33965,7 @@ function Display({
     }
   }
 
+  console.log(count);
   const random = Math.floor(Math.random() * 2);
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h1", null, "COUNTRY QUIZ"), /*#__PURE__*/_react.default.createElement("div", {
     className: "container"
@@ -33976,16 +33984,13 @@ function Display({
   }), answered && /*#__PURE__*/_react.default.createElement(_ButtonToNext.default, {
     count: count,
     fetchingData: fetchingData,
-    correct: correct
+    correct: correct,
+    setAnswered: setAnswered
   })));
 }
 
 var _default = Display;
 exports.default = _default;
-{
-  /* <img style={{maxWidth:"100%"}} src={value[item1].flag} />
-  <h2>Which country does this flag belong to?</h2> */
-}
 },{"react":"node_modules/react/index.js","./ButtonToNext":"component/ButtonToNext.js"}],"component/App.js":[function(require,module,exports) {
 "use strict";
 
@@ -34000,7 +34005,7 @@ var _reactRouterDom = require("react-router-dom");
 
 var _Restart = _interopRequireDefault(require("./Restart"));
 
-var _Diaplay = _interopRequireDefault(require("./Diaplay"));
+var _Display = _interopRequireDefault(require("./Display"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -34037,7 +34042,7 @@ function App() {
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     exact: true,
     path: "/"
-  }, /*#__PURE__*/_react.default.createElement(_Diaplay.default, {
+  }, /*#__PURE__*/_react.default.createElement(_Display.default, {
     value: value,
     collectionItems: collectionItems,
     count: count,
@@ -34058,7 +34063,7 @@ function App() {
 
 var _default = App;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./Restart":"component/Restart.js","./Diaplay":"component/Diaplay.js"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./Restart":"component/Restart.js","./Display":"component/Display.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -34098,7 +34103,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63435" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50212" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

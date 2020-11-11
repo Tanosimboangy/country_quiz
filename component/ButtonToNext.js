@@ -1,11 +1,15 @@
 import React from "react";
-import {Link} from "react-dom";
+import {Link} from "react-router-dom";
 
-function ButtonToNext({fetchingData, correct}) {
+function ButtonToNext({fetchingData, correct, setAnswered}) {
+    function handleFetching() {
+        fetchingData();
+        setAnswered(false)
+    }
     return (
         <>
             {correct ? 
-                <button onClick={fetchingData}>Next</button>
+                <button onClick={handleFetching}>Next</button>
             :
                 <Link to="/restart">
                     <button>Next</button> 
