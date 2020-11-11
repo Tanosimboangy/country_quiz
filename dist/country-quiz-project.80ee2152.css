@@ -1,13 +1,27 @@
 body {
-  padding: 16px;
+  padding: 0 16px;
   margin: 0;
-  background: url(/background.e3ad310f.png);
+  background: url(/background.59c06501.png);
   max-width: 100%;
   background-position: 50% 50%;
   background-size: cover;
 }
+body h1 {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  color: white;
+  font-size: 40px;
+  margin: 0;
+  padding-bottom: 20px;
+}
 body .container {
-  padding: 16px;
+  background: url(/undraw_adventure.be647353.svg);
+  background-position: 100% -16%;
+  background-repeat: no-repeat;
+  padding-top: 32px;
+  padding-right: 10px;
+  padding-left: 10px;
   background-color: white;
   border-radius: 12px;
   max-width: 400px;
@@ -23,6 +37,9 @@ body .container h2 {
   font-size: 24px;
   line-height: 36px;
   color: #2F527B;
+  margin: 0;
+  padding: 10px 0;
+  max-width: 250px;
 }
 body .container .buttons {
   padding: 16px 10px;
@@ -37,6 +54,7 @@ body .container .buttons {
   font-size: 18px;
   line-height: 27px;
   color: blue;
+  position: relative;
 }
 body .container .buttons:hover {
   background: #F9A826;
@@ -44,14 +62,26 @@ body .container .buttons:hover {
 }
 body .container .correct {
   background-color: green;
+  background-image: url(/check_circle-24px.d7c35ddf.svg);
+  background-repeat: no-repeat;
+  background-position: 97% 50%;
+  fill: white;
   color: white;
 }
 body .container .correct:hover {
   background-color: green;
+  background-image: url(/check_circle-24px.d7c35ddf.svg);
+  background-repeat: no-repeat;
+  background-position: 97% 50%;
+  fill: white;
   color: white;
 }
 body .container .answered {
   background-color: red;
+  background-image: url(/cancel-24px.64a71567.svg);
+  background-repeat: no-repeat;
+  background-position: 97% 50%;
+  fill: white;
 }
 body .container .answered:hover {
   background-color: red;

@@ -1,20 +1,15 @@
 import React from "react";
 import {Link} from "react-dom";
 
-function ButtonToNext({fetchingData, correct, count}) {
-    console.log(count);
+function ButtonToNext({fetchingData, correct}) {
     return (
         <>
             {correct ? 
-            <button onClick={fetchingData} className="btn_next" >
-                Next
-            </button> 
+                <button onClick={fetchingData}>Next</button>
             :
-            <Link to="/restart">
-                <button onClick={fetchingData} className="btn_next" >
-                    Next
-                </button> 
-            </Link>
+                <Link to="/restart">
+                    <button>Next</button> 
+                </Link>
             }
         </>
     )

@@ -1,12 +1,27 @@
+
 body {
-    padding: 16px;
+    padding: 0 16px;
     margin: 0;
-    background: url(./background.png);
+    background: url(./img/background.png);
     max-width: 100%;
     background-position: 50% 50%;
     background-size: cover;
+    h1 {
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        color: white;
+        font-size: 40px;
+        margin: 0;
+        padding-bottom: 20px;
+    }
     .container {
-        padding: 16px;
+        background: url(./img/undraw_adventure.svg);
+        background-position: 100% -16%;
+        background-repeat: no-repeat;
+        padding-top: 32px;
+        padding-right: 10px;
+        padding-left: 10px;
         background-color: white;
         border-radius: 12px;
         max-width: 400px;
@@ -21,6 +36,9 @@ body {
             font-size: 24px;
             line-height: 36px;
             color: #2F527B;
+            margin: 0;
+            padding: 10px 0;
+            max-width: 250px;
         }
         .buttons {
             padding: 16px 10px;
@@ -35,6 +53,7 @@ body {
             font-size: 18px;
             line-height: 27px;
             color: blue;
+            position: relative;
         }
         .buttons:hover {
             background: #F9A826;
@@ -42,14 +61,26 @@ body {
         }
         .correct {
             background-color: green;
+            background-image: url(./img/check_circle-24px.svg);
+            background-repeat: no-repeat;
+            background-position: 97% 50%;
+            fill: white;
             color: white;
         }
         .correct:hover {
             background-color: green;
+            background-image: url(./img/check_circle-24px.svg);
+            background-repeat: no-repeat;
+            background-position: 97% 50%;
+            fill: white;
             color: white;
         }
         .answered {
             background-color: red;
+            background-image: url(./img/cancel-24px.svg);
+            background-repeat: no-repeat;
+            background-position: 97% 50%;
+            fill: white;
         }
         .answered:hover {
             background-color: red;

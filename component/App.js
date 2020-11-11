@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
+import Restart from "./Restart";
 import Display from "./Diaplay";
-const API = "https://restcountries.eu/rest/v2/all"
+
+const API = "https://restcountries.eu/rest/v2/all";
+
 function App() {
     const [value, setValue] = useState([]);
+    const [count, setCount] = useState(0);
     async function fetchingData() {
         const data = await fetch(API);
         const res = await data.json();
@@ -21,7 +26,18 @@ function App() {
     const groupItems = [item1, item4, item2, item3]
     const collectionItems = groupItems.sort((a, b) => b - a);
     return (
-        <Display value={value} collectionItems={collectionItems} item1={item1} item2={item2} item3={item3} item4={item4} setValue={setValue} fetchingData={fetchingData} />
+        <div>
+            <Router >
+            <Switch>
+                <Route exact path="/">
+                    <Display value={value} collectionItems={collectionItems} count={count} setCount={setCount} item1={item1} item2={item2} item3={item3} item4={item4} setValue={setValue} fetchingData={fetchingData} />
+                </Route>
+                <Route path="/restart">
+                    <Restart count={count} fetchingData={fetchingData} />
+                </Route>
+            </Switch>
+        </ Router>
+        </div>
     )
 }
 export default App;

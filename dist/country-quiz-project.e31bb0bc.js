@@ -29772,40 +29772,7 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"component/ButtonToNext.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-var _reactDom = require("react-dom");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function ButtonToNext({
-  fetchingData,
-  correct,
-  count
-}) {
-  console.log(count);
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, correct ? /*#__PURE__*/_react.default.createElement("button", {
-    onClick: fetchingData,
-    className: "btn_next"
-  }, "Next") : /*#__PURE__*/_react.default.createElement(_reactDom.Link, {
-    to: "/restart"
-  }, /*#__PURE__*/_react.default.createElement("button", {
-    onClick: fetchingData,
-    className: "btn_next"
-  }, "Next")));
-}
-
-var _default = ButtonToNext;
-exports.default = _default;
-},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js"}],"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33886,7 +33853,63 @@ if ("development" !== "production") {
     style: _propTypes.default.object
   });
 }
-},{"react-router":"node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"node_modules/react/index.js","history":"node_modules/history/esm/history.js","prop-types":"node_modules/prop-types/index.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"component/Diaplay.js":[function(require,module,exports) {
+},{"react-router":"node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"node_modules/react/index.js","history":"node_modules/history/esm/history.js","prop-types":"node_modules/prop-types/index.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"component/Restart.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _reactRouterDom = require("react-router-dom");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Restart({
+  fetchingData,
+  count
+}) {
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "restart"
+  }, /*#__PURE__*/_react.default.createElement("h2", null, "Result"), /*#__PURE__*/_react.default.createElement("p", null, "You got ", count, " correct answers"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/"
+  }, /*#__PURE__*/_react.default.createElement("button", {
+    onClick: fetchingData
+  }, "Try again")));
+}
+
+var _default = Restart;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"component/ButtonToNext.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _reactDom = require("react-dom");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function ButtonToNext({
+  fetchingData,
+  correct
+}) {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, correct ? /*#__PURE__*/_react.default.createElement("button", {
+    onClick: fetchingData
+  }, "Next") : /*#__PURE__*/_react.default.createElement(_reactDom.Link, {
+    to: "/restart"
+  }, /*#__PURE__*/_react.default.createElement("button", null, "Next")));
+}
+
+var _default = ButtonToNext;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js"}],"component/Diaplay.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33898,8 +33921,6 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _ButtonToNext = _interopRequireDefault(require("./ButtonToNext"));
 
-var _reactRouterDom = require("react-router-dom");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
@@ -33910,31 +33931,40 @@ function Display({
   value,
   collectionItems,
   item1,
-  fetchingData
+  fetchingData,
+  count,
+  setCount
 }) {
   const [correct, setCorrect] = (0, _react.useState)(false);
   const [answered, setAnswered] = (0, _react.useState)(false);
-  const [count, setCount] = (0, _react.useState)(0);
 
   function handleClickButton(e) {
-    const el = e.target;
+    // const allbtn = Array.from(e.target.parentElement.querySelectorAll(".buttons"))
+    // allbtn.map(item => item.setAttribute("disabled", ""))
     setAnswered(true);
 
-    if (el.dataset.value === value[item1].name) {
-      el.classList.add("correct");
-      setCorrect(true);
-      setCount(prev => prev + 1);
+    if (e.target.dataset.value === value[item1].name) {
+      e.target.classList.add("correct");
+      setCorrect(true); // setCount(prev => prev + 1);
     } else {
-      el.classList.add("answered");
+      setCorrect(false);
+      e.target.classList.add("answered"); // setAnswered(false);
+      // const correctAsnwer = collectionItems.find(item => {
+      //     return value[item].name == value[item1].name
+      // })
+      // const trueAnswer = value[correctAsnwer].name
+      // const selected = allbtn.find(item => item.dataset.value === trueAnswer)
+      // selected.classList.add("correct")
     }
   }
 
-  return /*#__PURE__*/_react.default.createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
-    exact: true,
-    path: "/"
-  }, /*#__PURE__*/_react.default.createElement("div", {
+  const random = Math.floor(Math.random() * 2);
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h1", null, "COUNTRY QUIZ"), /*#__PURE__*/_react.default.createElement("div", {
     className: "container"
-  }, /*#__PURE__*/_react.default.createElement("h2", null, value[item1].capital, " is the capital of?"), collectionItems.map(map => {
+  }, random === 0 ? /*#__PURE__*/_react.default.createElement("h2", null, value[item1].capital && value[item1].capital, " is the capital of?") : /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: value[item1].flag,
+    className: "flag"
+  }), /*#__PURE__*/_react.default.createElement("h2", null, "Which country does this flag belong to?")), collectionItems.map(map => {
     return /*#__PURE__*/_react.default.createElement("div", {
       key: value[map].name
     }, /*#__PURE__*/_react.default.createElement("button", {
@@ -33943,13 +33973,11 @@ function Display({
       onClick: handleClickButton,
       className: "buttons"
     }, value[map].name, /*#__PURE__*/_react.default.createElement("br", null)));
-  }))), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
-    path: "/restart"
-  }, /*#__PURE__*/_react.default.createElement(_ButtonToNext.default, {
+  }), answered && /*#__PURE__*/_react.default.createElement(_ButtonToNext.default, {
     count: count,
     fetchingData: fetchingData,
     correct: correct
-  }))));
+  })));
 }
 
 var _default = Display;
@@ -33957,19 +33985,8 @@ exports.default = _default;
 {
   /* <img style={{maxWidth:"100%"}} src={value[item1].flag} />
   <h2>Which country does this flag belong to?</h2> */
-} // const API_CAPITAL = "https://restcountries.eu/rest/v2/capital/"
-// // Declaration UseState with Fetching the data for the capital
-// const [data, setData] = useState([]);
-// async function fetchingCapitalData() {
-//     const data = await fetch(API_CAPITAL);
-//     const resp = await data.json()
-//     setData(resp);
-// }
-// useEffect(() => {
-//     fetchingCapitalData()
-// }, [])
-// console.log(data);
-},{"react":"node_modules/react/index.js","./ButtonToNext":"component/ButtonToNext.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"component/App.js":[function(require,module,exports) {
+}
+},{"react":"node_modules/react/index.js","./ButtonToNext":"component/ButtonToNext.js"}],"component/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33978,6 +33995,10 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
+
+var _reactRouterDom = require("react-router-dom");
+
+var _Restart = _interopRequireDefault(require("./Restart"));
 
 var _Diaplay = _interopRequireDefault(require("./Diaplay"));
 
@@ -33991,6 +34012,7 @@ const API = "https://restcountries.eu/rest/v2/all";
 
 function App() {
   const [value, setValue] = (0, _react.useState)([]);
+  const [count, setCount] = (0, _react.useState)(0);
 
   async function fetchingData() {
     const data = await fetch(API);
@@ -34012,21 +34034,31 @@ function App() {
 
   const groupItems = [item1, item4, item2, item3];
   const collectionItems = groupItems.sort((a, b) => b - a);
-  return /*#__PURE__*/_react.default.createElement(_Diaplay.default, {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    exact: true,
+    path: "/"
+  }, /*#__PURE__*/_react.default.createElement(_Diaplay.default, {
     value: value,
     collectionItems: collectionItems,
+    count: count,
+    setCount: setCount,
     item1: item1,
     item2: item2,
     item3: item3,
     item4: item4,
     setValue: setValue,
     fetchingData: fetchingData
-  });
+  })), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/restart"
+  }, /*#__PURE__*/_react.default.createElement(_Restart.default, {
+    count: count,
+    fetchingData: fetchingData
+  })))));
 }
 
 var _default = App;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","./Diaplay":"component/Diaplay.js"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./Restart":"component/Restart.js","./Diaplay":"component/Diaplay.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -34066,7 +34098,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55774" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63435" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
