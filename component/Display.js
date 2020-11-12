@@ -21,7 +21,7 @@ const [answered, setAnswered] = useState(false);
     const random = Math.floor(Math.random() * 4);
     if ((!value[item1].capital) || (!value[item1].flag)) {
         fetchingData()
-    } 
+    }
     return (
         <>
             <h1>COUNTRY QUIZ</h1>

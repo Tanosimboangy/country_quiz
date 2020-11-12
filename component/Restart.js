@@ -9,7 +9,7 @@ function Restart({ fetchingData, count, setCount }) {
     return (
         <div className="restart">
             <h2>Result</h2>
-            <p>You got {count} correct answers</p>
+            <p>You got <b style={{color:"green"}}>{count}</b> correct answers</p>
             <Link to="/">
                 <button onClick={handleStart}>
                     Try again

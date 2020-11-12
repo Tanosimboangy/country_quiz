@@ -33879,7 +33879,11 @@ function Restart({
 
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "restart"
-  }, /*#__PURE__*/_react.default.createElement("h2", null, "Result"), /*#__PURE__*/_react.default.createElement("p", null, "You got ", count, " correct answers"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  }, /*#__PURE__*/_react.default.createElement("h2", null, "Result"), /*#__PURE__*/_react.default.createElement("p", null, "You got ", /*#__PURE__*/_react.default.createElement("b", {
+    style: {
+      color: "green"
+    }
+  }, count), " correct answers"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/"
   }, /*#__PURE__*/_react.default.createElement("button", {
     onClick: handleStart
@@ -33909,16 +33913,25 @@ function ButtonToNext({
   setAnswered
 }) {
   function handleClickNext() {
-    fetchingData();
-    setCount(prev => prev + 1);
+    // Rerun the fetching function again 
+    fetchingData(); // Running the increment counter
+
+    setCount(prev => prev + 1); // Setting the setAnswered into fasle so the start button does not show untill the user clicks on of the four buttons
+
     setAnswered(false);
-  } // I the user clicks the right button with the right answer, then turn the first next button, ontherwise turn the other way around
+  } // Rendering either of these button according to the answer
 
 
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, correct ? /*#__PURE__*/_react.default.createElement("button", {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, correct ?
+  /*#__PURE__*/
+  // If the user clicks the right button with the right answer, display this first next button
+  _react.default.createElement("button", {
     className: "btn_next",
     onClick: handleClickNext
-  }, "Next") : /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  }, "Next") :
+  /*#__PURE__*/
+  // However if the user clicks incorrect button, display this second next button
+  _react.default.createElement(_reactRouterDom.Link, {
     to: "/restart"
   }, /*#__PURE__*/_react.default.createElement("button", {
     className: "btn_next"
@@ -34119,7 +34132,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49961" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49820" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

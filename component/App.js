@@ -22,7 +22,7 @@ function App() {
     const item4 = Math.floor(Math.random() * value.length)
 
     if ((item1 === item2) || (item1 === item4) || (item2 === item3) || (item3 === item4) || (item1 === item3)) {
-          return null
+        return null
     }
 
     const groupItems = [item1, item4, item2, item3]
@@ -32,11 +32,26 @@ function App() {
             <Router >
                 <Switch>
                     <Route exact path="/">
-                        <Display value={value} collectionItems={collectionItems} count={count} setCount={setCount} item1={item1} item2={item2} item3={item3} item4={item4} setValue={setValue} fetchingData={fetchingData} />
+                        <Display 
+                            value={value} 
+                            collectionItems={collectionItems} 
+                            count={count} 
+                            setCount={setCount} 
+                            item1={item1} 
+                            item2={item2} 
+                            item3={item3} 
+                            item4={item4} 
+                            setValue={setValue} 
+                            fetchingData={fetchingData} 
+                        />
                     </Route>
                     <Route path="/restart">
                         <div className="container">
-                            <Restart count={count} setCount={setCount} fetchingData={fetchingData} />
+                            <Restart 
+                                count={count} 
+                                setCount={setCount} 
+                                fetchingData={fetchingData} 
+                            />
                         </div>
                     </Route>
                 </Switch>

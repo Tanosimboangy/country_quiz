@@ -100,21 +100,22 @@ body .btn_next {
   background: #F9A826;
   margin-bottom: 10px;
 }
+body .restart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 body .restart h2 {
-  font-style: normal;
   font-size: 24px;
   line-height: 36px;
   color: #2f527b;
-  text-align: center;
   padding-top: 50px;
   padding-bottom: 20px;
 }
 body .restart p {
-  font-style: normal;
   font-size: 24px;
   line-height: 36px;
   color: #2f527b;
-  text-align: center;
   padding-top: 30px;
   padding-bottom: 20px;
 }
@@ -125,7 +126,6 @@ body .restart button {
   box-sizing: border-box;
   border-radius: 12px;
   background: #fff;
-  font-style: normal;
   font-weight: 600;
   font-size: 18px;
   line-height: 27px;
