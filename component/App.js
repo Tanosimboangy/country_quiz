@@ -6,6 +6,7 @@ import Display from "./Display";
 const API = "https://restcountries.eu/rest/v2/all";
 
 function App() {
+
     const [value, setValue] = useState([]);
     const [count, setCount] = useState(0);
     async function fetchingData() {
@@ -32,25 +33,25 @@ function App() {
             <Router >
                 <Switch>
                     <Route exact path="/">
-                        <Display 
-                            value={value} 
-                            collectionItems={collectionItems} 
-                            count={count} 
-                            setCount={setCount} 
-                            item1={item1} 
-                            item2={item2} 
-                            item3={item3} 
-                            item4={item4} 
-                            setValue={setValue} 
-                            fetchingData={fetchingData} 
+                        <Display
+                            value={value}
+                            collectionItems={collectionItems}
+                            count={count}
+                            setCount={setCount}
+                            item1={item1}
+                            item2={item2}
+                            item3={item3}
+                            item4={item4}
+                            setValue={setValue}
+                            fetchingData={fetchingData}
                         />
                     </Route>
                     <Route path="/restart">
                         <div className="container">
-                            <Restart 
-                                count={count} 
-                                setCount={setCount} 
-                                fetchingData={fetchingData} 
+                            <Restart
+                                count={count}
+                                setCount={setCount}
+                                fetchingData={fetchingData}
                             />
                         </div>
                     </Route>

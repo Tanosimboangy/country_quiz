@@ -33886,6 +33886,7 @@ function Restart({
   }, count), " correct answers"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/"
   }, /*#__PURE__*/_react.default.createElement("button", {
+    className: "btn_tryAigain",
     onClick: handleStart
   }, "Try again")));
 }
@@ -33940,7 +33941,71 @@ function ButtonToNext({
 
 var _default = ButtonToNext;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"component/Display.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"component/DisplayContent.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _ButtonToNext = _interopRequireDefault(require("./ButtonToNext"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function DisplayContent({
+  correct,
+  answered,
+  setAnswered,
+  handleClickButton,
+  ButtonToNext,
+  fetchingData,
+  count,
+  value,
+  collectionItems,
+  item1,
+  setCount
+}) {
+  const MathRandom = Math.floor(Math.random() * 2);
+
+  if (!value[item1].capital || !value[item1].flag) {
+    fetchingData();
+  }
+
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "COUNTRY QUIZ"), /*#__PURE__*/_react.default.createElement("div", {
+    className: "container"
+  }, MathRandom === 0 ? /*#__PURE__*/_react.default.createElement("h2", {
+    className: "capitale_question"
+  }, value[item1].capital ? value[item1].capital : "", " is the capital of?") : /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: value[item1].flag,
+    className: "flag"
+  }), /*#__PURE__*/_react.default.createElement("h2", {
+    className: "flag_question"
+  }, "Which country does this flag belong to?")), collectionItems.map(map => {
+    return /*#__PURE__*/_react.default.createElement("div", {
+      key: value[map].name,
+      className: "button_container"
+    }, /*#__PURE__*/_react.default.createElement("button", {
+      disabled: answered,
+      value: value[map].name,
+      "data-value": value[map].name,
+      onClick: handleClickButton,
+      className: "buttons"
+    }, value[map].name, /*#__PURE__*/_react.default.createElement("br", null)));
+  }), answered && /*#__PURE__*/_react.default.createElement(ButtonToNext, {
+    count: count,
+    fetchingData: fetchingData,
+    correct: correct,
+    setAnswered: setAnswered,
+    setCount: setCount
+  })));
+}
+
+var _default = DisplayContent;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","./ButtonToNext":"component/ButtonToNext.js"}],"component/Display.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33951,6 +34016,8 @@ exports.default = void 0;
 var _react = _interopRequireWildcard(require("react"));
 
 var _ButtonToNext = _interopRequireDefault(require("./ButtonToNext"));
+
+var _DisplayContent = _interopRequireDefault(require("./DisplayContent"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -33985,39 +34052,24 @@ function Display({
     }
   }
 
-  const random = Math.floor(Math.random() * 4);
-
-  if (!value[item1].capital || !value[item1].flag) {
-    fetchingData();
-  }
-
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h1", null, "COUNTRY QUIZ"), /*#__PURE__*/_react.default.createElement("div", {
-    className: "container"
-  }, random === 0 ? /*#__PURE__*/_react.default.createElement("h2", null, value[item1].capital ? value[item1].capital : "", " is the capital of?") : /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
-    src: value[item1].flag,
-    className: "flag"
-  }), /*#__PURE__*/_react.default.createElement("h2", null, "Which country does this flag belong to?")), collectionItems.map(map => {
-    return /*#__PURE__*/_react.default.createElement("div", {
-      key: value[map].name
-    }, /*#__PURE__*/_react.default.createElement("button", {
-      disabled: answered,
-      value: value[map].name,
-      "data-value": value[map].name,
-      onClick: handleClickButton,
-      className: "buttons"
-    }, value[map].name, /*#__PURE__*/_react.default.createElement("br", null)));
-  }), answered && /*#__PURE__*/_react.default.createElement(_ButtonToNext.default, {
-    count: count,
-    fetchingData: fetchingData,
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_DisplayContent.default, {
     correct: correct,
+    answered: answered,
     setAnswered: setAnswered,
-    setCount: setCount
-  })));
+    handleClickButton: handleClickButton,
+    ButtonToNext: _ButtonToNext.default,
+    fetchingData: fetchingData,
+    count: count,
+    setCount: setCount,
+    value: value,
+    collectionItems: collectionItems,
+    item1: item1
+  }));
 }
 
 var _default = Display;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","./ButtonToNext":"component/ButtonToNext.js"}],"component/App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./ButtonToNext":"component/ButtonToNext.js","./DisplayContent":"component/DisplayContent.js"}],"component/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34132,7 +34184,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49820" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52898" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -11,7 +11,7 @@ function Restart({ fetchingData, count, setCount }) {
             <h2>Result</h2>
             <p>You got <b style={{color:"green"}}>{count}</b> correct answers</p>
             <Link to="/">
-                <button onClick={handleStart}>
+                <button className="btn_tryAigain" onClick={handleStart}>
                     Try again
                 </button>
             </Link>
