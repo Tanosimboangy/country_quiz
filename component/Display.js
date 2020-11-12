@@ -8,6 +8,7 @@ function Display({ value, collectionItems, item1, fetchingData, count, setCount 
     const [correct, setCorrect] = useState(false);
     // State for checking whether the has anwered or not
     const [answered, setAnswered] = useState(false);
+    const [rightColor, setRightColor] = useState(false);
 
     // Function for setting the condition whether the user has answered or not yet 
     // Function for setting the condition whether the answer is correct or incorrect 
@@ -19,10 +20,13 @@ function Display({ value, collectionItems, item1, fetchingData, count, setCount 
         } else if ((e.target.dataset.value) !== (value[item1].name)) {
             setCorrect(false);
             e.target.classList.add("responded");
-            const rightButton = value[collectionItems.find(item => {
-                return value[item].name === value[item1].name;
-            })].name;
-            console.log(rightButton);
+            // Getting the right button with the right answer
+            // const rightButton = value[collectionItems.find(item => {
+            //     return value[item].name === value[item1].name;
+            // })].name;
+            // console.log(rightButton);
+            // rightButton.style.backgroundColor = "true"
+            setRightColor(true);
         }
     }
 
@@ -40,6 +44,7 @@ function Display({ value, collectionItems, item1, fetchingData, count, setCount 
                 value={value}
                 collectionItems={collectionItems}
                 item1={item1}
+                rightColor={rightColor}
             />
         </>
     )

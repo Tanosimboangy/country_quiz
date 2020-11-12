@@ -10,9 +10,6 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     #root {
         .principal_container {
-            // background: url(./img/undraw_adventure.svg);
-            // background-position: 82% 0%;
-            // background-repeat: no-repeat;
             h1 {
                 margin: 0;
                 margin: auto;
@@ -32,6 +29,13 @@ body {
                 border-radius: 12px;
                 padding-bottom: 32px;
                 background-color: white;
+                position: relative;
+                .adventure_image {
+                    position: absolute;
+                    top: -16%;
+                    right: 1%;
+                    width: 40%;
+                }
                 img {
                     width: 84px;
                 }

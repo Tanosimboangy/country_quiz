@@ -1,4 +1,5 @@
 import React from "react";
+import undraw_adventure from "../img/undraw_adventure.svg";
 
 function Displaycontent({
     correct,
@@ -10,6 +11,7 @@ function Displaycontent({
     count,
     value,
     collectionItems,
+    // rightColor,
     item1,
     setCount,}) {
 
@@ -21,7 +23,7 @@ function Displaycontent({
     return (
         <div>
             <div className="container">
-                <img src="../img/undraw_adventure.svg" />
+                <img className="adventure_image" src={undraw_adventure} />
                 {MathRandom === 0
                     ? <h2 className="capitale_question">{value[item1].capital ? value[item1].capital : ""} is the capital of?</h2>
                     : (<div >

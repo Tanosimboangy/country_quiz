@@ -33941,7 +33941,9 @@ function ButtonToNext({
 
 var _default = ButtonToNext;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"component/Displaycontent.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"img/undraw_adventure.svg":[function(require,module,exports) {
+module.exports = "/undraw_adventure.be647353.svg";
+},{}],"component/Displaycontent.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33950,6 +33952,8 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
+
+var _undraw_adventure = _interopRequireDefault(require("../img/undraw_adventure.svg"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -33963,6 +33967,7 @@ function Displaycontent({
   count,
   value,
   collectionItems,
+  // rightColor,
   item1,
   setCount
 }) {
@@ -33975,7 +33980,8 @@ function Displaycontent({
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
     className: "container"
   }, /*#__PURE__*/_react.default.createElement("img", {
-    src: "../img/undraw_adventure.svg"
+    className: "adventure_image",
+    src: _undraw_adventure.default
   }), MathRandom === 0 ? /*#__PURE__*/_react.default.createElement("h2", {
     className: "capitale_question"
   }, value[item1].capital ? value[item1].capital : "", " is the capital of?") : /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
@@ -34005,7 +34011,7 @@ function Displaycontent({
 
 var _default = Displaycontent;
 exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"component/Display.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../img/undraw_adventure.svg":"img/undraw_adventure.svg"}],"component/Display.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34036,7 +34042,8 @@ function Display({
   // State for checking whether the answer is correct or not
   const [correct, setCorrect] = (0, _react.useState)(false); // State for checking whether the has anwered or not
 
-  const [answered, setAnswered] = (0, _react.useState)(false); // Function for setting the condition whether the user has answered or not yet 
+  const [answered, setAnswered] = (0, _react.useState)(false);
+  const [rightColor, setRightColor] = (0, _react.useState)(false); // Function for setting the condition whether the user has answered or not yet 
   // Function for setting the condition whether the answer is correct or incorrect 
 
   function handleClickButton(e) {
@@ -34047,11 +34054,14 @@ function Display({
       setCorrect(true);
     } else if (e.target.dataset.value !== value[item1].name) {
       setCorrect(false);
-      e.target.classList.add("responded");
-      const rightButton = value[collectionItems.find(item => {
-        return value[item].name === value[item1].name;
-      })].name;
-      console.log(rightButton);
+      e.target.classList.add("responded"); // Getting the right button with the right answer
+      // const rightButton = value[collectionItems.find(item => {
+      //     return value[item].name === value[item1].name;
+      // })].name;
+      // console.log(rightButton);
+      // rightButton.style.backgroundColor = "true"
+
+      setRightColor(true);
     }
   }
 
@@ -34066,7 +34076,8 @@ function Display({
     setCount: setCount,
     value: value,
     collectionItems: collectionItems,
-    item1: item1
+    item1: item1,
+    rightColor: rightColor
   }));
 }
 
