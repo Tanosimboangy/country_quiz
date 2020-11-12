@@ -1,37 +1,37 @@
 body {
-  margin: 15px;
+  margin: 0;
+  padding: 16px;
+  padding-top: 40px;
   max-width: 100%;
   background-size: cover;
   background-position: 50% 50%;
   background: url(/background.59c06501.png);
   font-family: Arial, Helvetica, sans-serif;
 }
-body #root div h1 {
+body #root .principal_container h1 {
   margin: 0;
   margin: auto;
   color: white;
-  font-size: 40px;
-  font-weight: 700;
+  max-width: 370px;
+  font-weight: 600;
   max-width: 400px;
   text-align: left;
   padding-bottom: 20px;
 }
-body #root div .container {
+body #root .principal_container .container {
   margin: auto;
-  max-width: 330px;
+  max-width: 370px;
   padding-top: 32px;
   padding-left: 20px;
   padding-right: 20px;
   border-radius: 12px;
-  background: url(/undraw_adventure.be647353.svg);
-  background-repeat: no-repeat;
-  background-position: 100% -16%;
+  padding-bottom: 32px;
   background-color: white;
 }
-body #root div .container img {
+body #root .principal_container .container img {
   width: 84px;
 }
-body #root div .container h2 {
+body #root .principal_container .container h2 {
   margin: 0;
   padding: 10px 0;
   font-size: 24px;
@@ -42,7 +42,18 @@ body #root div .container h2 {
   font-style: normal;
   font-family: Arial, Helvetica, sans-serif;
 }
-body #root div .container .button_container .buttons {
+body #root .principal_container .container .flag_question {
+  margin: 0;
+  padding: 10px 0;
+  font-size: 24px;
+  max-width: 100%;
+  color: #2F527B;
+  font-weight: bold;
+  line-height: 36px;
+  font-style: normal;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body #root .principal_container .container .button_container .buttons {
   width: 100%;
   outline: none;
   font-size: 18px;
@@ -59,66 +70,71 @@ body #root div .container .button_container .buttons {
   border: 2px solid rgba(96, 102, 208, 0.7);
   font-family: Arial, Helvetica, sans-serif;
 }
-body #root div .container .button_container .buttons:hover {
+body #root .principal_container .container .button_container .buttons:hover {
   color: white;
   background: #F9A826;
 }
-body #root div .container .button_container .true {
+body #root .principal_container .container .button_container .true {
   color: white;
-  background-color: green;
+  background: #60bf88;
   background-repeat: no-repeat;
   background-position: 97% 50%;
-  background-image: url(/check_circle-24px.d7c35ddf.svg);
+  background-image: url(/check_circle.4c17ec5b.svg);
 }
-body #root div .container .button_container .true:hover {
+body #root .principal_container .container .button_container .true:hover {
   color: white;
-  background-color: green;
+  background: #60bf88;
   background-position: 97% 50%;
   background-repeat: no-repeat;
-  background-image: url(/check_circle-24px.d7c35ddf.svg);
+  background-image: url(/check_circle.4c17ec5b.svg);
 }
-body #root div .container .button_container .responded {
-  background-color: red;
+body #root .principal_container .container .button_container .responded {
+  background: #ea8282;
   background-repeat: no-repeat;
   background-position: 97% 50%;
-  background-image: url(/cancel-24px.64a71567.svg);
+  background-image: url(/cancel.62487108.svg);
 }
-body #root div .container .button_container .responded:hover {
-  background-color: red;
+body #root .principal_container .container .button_container .responded:hover {
+  background: #ea8282;
   background-repeat: no-repeat;
   background-position: 97% 50%;
-  background-image: url(/cancel-24px.64a71567.svg);
+  background-image: url(/cancel.62487108.svg);
 }
-body #root div .btn_next {
+body #root .principal_container .btn_next {
+  border: none;
   outline: none;
-  font-size: 20px;
+  font-weight: 700;
+  font-size: 18px;
   margin-top: 10px;
-  padding: 10px 20px;
+  line-height: 27px;
+  font-family: "Poppins";
+  padding: 15px 30px;
   margin-bottom: 10px;
-  border-radius: 10px;
-  background: #F9A826;
-  border: 1px solid blue;
+  border-radius: 12px;
+  color: #fff;
+  background: #f9a826;
+  box-shadow: 0 2px 4px rgba(252, 168, 47, 0.4);
 }
-body #root div .restart {
+body #root .principal_container .restart {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
-body #root div .restart h2 {
+body #root .principal_container .restart h2 {
   font-size: 24px;
   color: #2f527b;
   padding-top: 50px;
   line-height: 36px;
   padding-bottom: 20px;
 }
-body #root div .restart p {
+body #root .principal_container .restart p {
   font-size: 24px;
   color: #2f527b;
   padding-top: 30px;
   line-height: 36px;
   padding-bottom: 20px;
 }
-body #root div .restart .btn_tryAigain {
+body #root .principal_container .restart .btn_tryAigain {
   width: 209px;
   height: 62px;
   outline: none;
@@ -133,7 +149,7 @@ body #root div .restart .btn_tryAigain {
   box-sizing: border-box;
   border: 2px solid #1d355d;
 }
-body #root div .restart .btn_tryAigain:hover {
+body #root .principal_container .restart .btn_tryAigain:hover {
   background: #F9A826;
 }
 

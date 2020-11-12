@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 function Restart({ fetchingData, count, setCount }) {
     function handleStart() {
@@ -8,6 +8,7 @@ function Restart({ fetchingData, count, setCount }) {
     }
     return (
         <div className="restart">
+            {/* <img src="./img/undraw_winners_.svg" alt="restart the game" /> */}
             <h2>Result</h2>
             <p>You got <b style={{color:"green"}}>{count}</b> correct answers</p>
             <Link to="/">

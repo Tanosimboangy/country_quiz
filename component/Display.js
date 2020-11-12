@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import ButtonToNext from "./ButtonToNext";
-import DisplayContent from "./DisplayContent";
+import Displaycontent from "./Displaycontent";
 
 function Display({ value, collectionItems, item1, fetchingData, count, setCount }) {
 
+    // State for checking whether the answer is correct or not
     const [correct, setCorrect] = useState(false);
+    // State for checking whether the has anwered or not
     const [answered, setAnswered] = useState(false);
 
+    // Function for setting the condition whether the user has answered or not yet 
+    // Function for setting the condition whether the answer is correct or incorrect 
     function handleClickButton(e) {
         setAnswered(true);
         if ((e.target.dataset.value) === (value[item1].name)) {
@@ -24,7 +28,7 @@ function Display({ value, collectionItems, item1, fetchingData, count, setCount 
 
     return (
         <>
-            <DisplayContent
+            <Displaycontent
                 correct={correct}
                 answered={answered}
                 setAnswered={setAnswered}

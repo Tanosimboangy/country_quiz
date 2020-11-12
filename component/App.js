@@ -29,7 +29,8 @@ function App() {
     const groupItems = [item1, item4, item2, item3]
     const collectionItems = groupItems.sort((a, b) => b - a);
     return (
-        <div>
+        <div className="principal_container">
+            <h1>COUNTRY QUIZ</h1>
             <Router >
                 <Switch>
                     <Route exact path="/">

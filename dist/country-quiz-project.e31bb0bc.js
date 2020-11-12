@@ -33941,7 +33941,7 @@ function ButtonToNext({
 
 var _default = ButtonToNext;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"component/DisplayContent.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"component/Displaycontent.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33951,11 +33951,9 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _ButtonToNext = _interopRequireDefault(require("./ButtonToNext"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function DisplayContent({
+function Displaycontent({
   correct,
   answered,
   setAnswered,
@@ -33968,15 +33966,17 @@ function DisplayContent({
   item1,
   setCount
 }) {
-  const MathRandom = Math.floor(Math.random() * 2);
+  const MathRandom = Math.floor(Math.random() * 4);
 
   if (!value[item1].capital || !value[item1].flag) {
     fetchingData();
   }
 
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "COUNTRY QUIZ"), /*#__PURE__*/_react.default.createElement("div", {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
     className: "container"
-  }, MathRandom === 0 ? /*#__PURE__*/_react.default.createElement("h2", {
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: "../img/undraw_adventure.svg"
+  }), MathRandom === 0 ? /*#__PURE__*/_react.default.createElement("h2", {
     className: "capitale_question"
   }, value[item1].capital ? value[item1].capital : "", " is the capital of?") : /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
     src: value[item1].flag,
@@ -34003,9 +34003,9 @@ function DisplayContent({
   })));
 }
 
-var _default = DisplayContent;
+var _default = Displaycontent;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","./ButtonToNext":"component/ButtonToNext.js"}],"component/Display.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js"}],"component/Display.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34017,7 +34017,7 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _ButtonToNext = _interopRequireDefault(require("./ButtonToNext"));
 
-var _DisplayContent = _interopRequireDefault(require("./DisplayContent"));
+var _Displaycontent = _interopRequireDefault(require("./Displaycontent"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -34033,8 +34033,11 @@ function Display({
   count,
   setCount
 }) {
-  const [correct, setCorrect] = (0, _react.useState)(false);
-  const [answered, setAnswered] = (0, _react.useState)(false);
+  // State for checking whether the answer is correct or not
+  const [correct, setCorrect] = (0, _react.useState)(false); // State for checking whether the has anwered or not
+
+  const [answered, setAnswered] = (0, _react.useState)(false); // Function for setting the condition whether the user has answered or not yet 
+  // Function for setting the condition whether the answer is correct or incorrect 
 
   function handleClickButton(e) {
     setAnswered(true);
@@ -34052,7 +34055,7 @@ function Display({
     }
   }
 
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_DisplayContent.default, {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_Displaycontent.default, {
     correct: correct,
     answered: answered,
     setAnswered: setAnswered,
@@ -34069,7 +34072,7 @@ function Display({
 
 var _default = Display;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","./ButtonToNext":"component/ButtonToNext.js","./DisplayContent":"component/DisplayContent.js"}],"component/App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./ButtonToNext":"component/ButtonToNext.js","./Displaycontent":"component/Displaycontent.js"}],"component/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34117,7 +34120,9 @@ function App() {
 
   const groupItems = [item1, item4, item2, item3];
   const collectionItems = groupItems.sort((a, b) => b - a);
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "principal_container"
+  }, /*#__PURE__*/_react.default.createElement("h1", null, "COUNTRY QUIZ"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     exact: true,
     path: "/"
   }, /*#__PURE__*/_react.default.createElement(_Display.default, {
@@ -34184,7 +34189,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52898" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50893" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

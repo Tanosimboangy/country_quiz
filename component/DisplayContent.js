@@ -1,8 +1,7 @@
 import React from "react";
-import ButtonToNext from "./ButtonToNext";
 
-function DisplayContent({
-    correct, 
+function Displaycontent({
+    correct,
     answered,
     setAnswered,
     handleClickButton,
@@ -14,15 +13,15 @@ function DisplayContent({
     item1,
     setCount,}) {
 
-    const MathRandom = Math.floor(Math.random() * 2);
+    const MathRandom = Math.floor(Math.random() * 4);
     if ((!value[item1].capital) || (!value[item1].flag)) {
         fetchingData()
     }
 
     return (
         <div>
-            <h1>COUNTRY QUIZ</h1>
             <div className="container">
+                <img src="../img/undraw_adventure.svg" />
                 {MathRandom === 0
                     ? <h2 className="capitale_question">{value[item1].capital ? value[item1].capital : ""} is the capital of?</h2>
                     : (<div >
@@ -32,17 +31,17 @@ function DisplayContent({
                 }
                 {collectionItems.map(map => {
                     return (
-                        <div 
+                        <div
                             key={value[map].name}
                             className="button_container"
-                            >
+                        >
                             <button
                                 disabled={answered}
                                 value={value[map].name}
                                 data-value={value[map].name}
                                 onClick={handleClickButton}
                                 className="buttons"
-                                >
+                            >
                                 {value[map].name}<br />
                             </button>
                         </div>
@@ -60,5 +59,5 @@ function DisplayContent({
     )
 }
 
-export default DisplayContent;
+export default Displaycontent;
 

@@ -1,33 +1,36 @@
 
 body {
-    margin: 15px;
+    margin: 0;
+    padding: 16px;
+    padding-top: 40px;
     max-width: 100%;
     background-size: cover;
     background-position: 50% 50%;
     background: url(./img/background.png);
     font-family: Arial, Helvetica, sans-serif;
     #root {
-        div {
+        .principal_container {
+            // background: url(./img/undraw_adventure.svg);
+            // background-position: 82% 0%;
+            // background-repeat: no-repeat;
             h1 {
                 margin: 0;
                 margin: auto;
                 color: white;
-                font-size: 40px;
-                font-weight: 700;
+                max-width: 370px;
+                font-weight: 600;
                 max-width: 400px;
                 text-align: left;
                 padding-bottom: 20px;
             }
             .container {
                 margin: auto;
-                max-width: 330px;
+                max-width: 370px;
                 padding-top: 32px;
                 padding-left: 20px;
                 padding-right: 20px;
                 border-radius: 12px;
-                background: url(./img/undraw_adventure.svg);
-                background-repeat: no-repeat;
-                background-position: 100% -16%;
+                padding-bottom: 32px;
                 background-color: white;
                 img {
                     width: 84px;
@@ -37,6 +40,17 @@ body {
                     padding: 10px 0;
                     font-size: 24px;
                     max-width: 198px;
+                    color: #2F527B;
+                    font-weight: bold;
+                    line-height: 36px;
+                    font-style: normal;
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+                .flag_question {
+                    margin: 0;
+                    padding: 10px 0;
+                    font-size: 24px;
+                    max-width: 100%;
                     color: #2F527B;
                     font-weight: bold;
                     line-height: 36px;
@@ -66,46 +80,49 @@ body {
                         background: #F9A826;
                     }
                     .true {
-                        // fill: white;
                         color: white;
-                        background-color: green;
+                        background: rgb(96, 191, 136);
                         background-repeat: no-repeat;
                         background-position: 97% 50%;
-                        background-image: url(./img/check_circle-24px.svg);
+                        background-image: url(./img/check_circle.svg);
                     }
                     .true:hover {
-                        // fill: white;
                         color: white;
-                        background-color: green;
+                        background: rgb(96, 191, 136);
                         background-position: 97% 50%;
                         background-repeat: no-repeat;
-                        background-image: url(./img/check_circle-24px.svg);
+                        background-image: url(./img/check_circle.svg);
                     }
                     .responded {
-                        // fill: white;
-                        background-color: red;
+                            background: rgb(234, 130, 130);
                         background-repeat: no-repeat;
                         background-position: 97% 50%;
-                        background-image: url(./img/cancel-24px.svg);
+                        background-image: url(./img/cancel.svg);
                     }
                     .responded:hover {
-                        // fill: white;
-                        background-color: red;
+                            background: rgb(234, 130, 130);
                         background-repeat: no-repeat;
                         background-position: 97% 50%;
-                        background-image: url(./img/cancel-24px.svg);
+                        background-image: url(./img/cancel.svg);
                     }
                 }
             }
             .btn_next {
+                border: none;
                 outline: none;
-                font-size: 20px;
+                font-weight: 700;
+                font-size: 18px;
                 margin-top: 10px;
-                padding: 10px 20px;
+                line-height: 27px;
+                font-family: "Poppins";
+                padding: 15px 30px;
                 margin-bottom: 10px;
-                border-radius: 10px;
-                background: #F9A826;
-                border: 1px solid blue;
+                border-radius: 12px;
+                color: #fff;
+                background: #f9a826;
+                box-shadow: 0 2px 4px rgba(252,168,47,.4);
+
+                
             }
             .restart {
                 display: flex;
