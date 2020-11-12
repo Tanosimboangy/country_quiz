@@ -33972,7 +33972,7 @@ function Display({
     }
   }
 
-  const random = Math.floor(Math.random() * 2);
+  const random = Math.floor(Math.random() * 4);
 
   if (!value[item1].capital || !value[item1].flag) {
     fetchingData();

@@ -13,12 +13,12 @@ const [answered, setAnswered] = useState(false);
             setCorrect(false);
             e.target.classList.add("responded");
             const rightButton = value[collectionItems.find(item => {
-                return value[item].name === value[item1].name
+                return value[item].name === value[item1].name;
             })].name;
             console.log(rightButton);
         }
     }
-    const random = Math.floor(Math.random() * 2);
+    const random = Math.floor(Math.random() * 4);
     if ((!value[item1].capital) || (!value[item1].flag)) {
         fetchingData()
     } 
