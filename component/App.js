@@ -21,17 +21,9 @@ function App() {
     const item3 = Math.floor(Math.random() * value.length)
     const item4 = Math.floor(Math.random() * value.length)
 
-    if (
-        !value.length ||
-        item1 === item2 ||
-        item1 === item3 ||
-        item1 === item4 ||
-        item2 === item3 ||
-        item2 === item4 ||
-        item3 === item4
-        ) {
+    if ((item1 === item2) || (item1 === item4) || (item2 === item3) || (item3 === item4) || (item1 === item3)) {
           return null
-        }
+    }
 
     const groupItems = [item1, item4, item2, item3]
     const collectionItems = groupItems.sort((a, b) => b - a);

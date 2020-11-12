@@ -59,7 +59,7 @@ body {
             background: #F9A826;
             color: white;
         }
-        .correct {
+        .true {
             background-color: green;
             background-image: url(./img/check_circle-24px.svg);
             background-repeat: no-repeat;
@@ -67,7 +67,7 @@ body {
             fill: white;
             color: white;
         }
-        .correct:hover {
+        .true:hover {
             background-color: green;
             background-image: url(./img/check_circle-24px.svg);
             background-repeat: no-repeat;
@@ -75,14 +75,14 @@ body {
             fill: white;
             color: white;
         }
-        .answered {
+        .responded {
             background-color: red;
             background-image: url(./img/cancel-24px.svg);
             background-repeat: no-repeat;
             background-position: 97% 50%;
             fill: white;
         }
-        .answered:hover {
+        .responded:hover {
             background-color: red;
             background-image: url(./img/cancel-24px.svg);
             background-repeat: no-repeat;

@@ -33904,11 +33904,20 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function ButtonToNext({
   fetchingData,
-  correct
+  correct,
+  setCount,
+  setAnswered
 }) {
+  function handleClickNext() {
+    fetchingData();
+    setCount(prev => prev + 1);
+    setAnswered(false);
+  } // I the user clicks the right button with the right answer, then turn the first next button, ontherwise turn the other way around
+
+
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, correct ? /*#__PURE__*/_react.default.createElement("button", {
     className: "btn_next",
-    onClick: fetchingData
+    onClick: handleClickNext
   }, "Next") : /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/restart"
   }, /*#__PURE__*/_react.default.createElement("button", {
@@ -33951,12 +33960,15 @@ function Display({
     setAnswered(true);
 
     if (e.target.dataset.value === value[item1].name) {
-      e.target.classList.add("correct");
+      e.target.classList.add("true");
       setCorrect(true);
-      setCount(prev => prev + 1);
-    } else {
+    } else if (e.target.dataset.value !== value[item1].name) {
       setCorrect(false);
-      e.target.classList.add("answered");
+      e.target.classList.add("responded");
+      const rightButton = value[collectionItems.find(item => {
+        return value[item].name === value[item1].name;
+      })].name;
+      console.log(rightButton);
     }
   }
 
@@ -33975,6 +33987,7 @@ function Display({
     return /*#__PURE__*/_react.default.createElement("div", {
       key: value[map].name
     }, /*#__PURE__*/_react.default.createElement("button", {
+      disabled: answered,
       value: value[map].name,
       "data-value": value[map].name,
       onClick: handleClickButton,
@@ -33984,7 +33997,8 @@ function Display({
     count: count,
     fetchingData: fetchingData,
     correct: correct,
-    setAnswered: setAnswered
+    setAnswered: setAnswered,
+    setCount: setCount
   })));
 }
 
@@ -34032,7 +34046,7 @@ function App() {
   const item3 = Math.floor(Math.random() * value.length);
   const item4 = Math.floor(Math.random() * value.length);
 
-  if (!value.length || item1 === item2 || item1 === item3 || item1 === item4 || item2 === item3 || item2 === item4 || item3 === item4) {
+  if (item1 === item2 || item1 === item4 || item2 === item3 || item3 === item4 || item1 === item3) {
     return null;
   }
 
@@ -34105,7 +34119,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50212" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49961" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

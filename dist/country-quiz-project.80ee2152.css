@@ -60,7 +60,7 @@ body .container .buttons:hover {
   background: #F9A826;
   color: white;
 }
-body .container .correct {
+body .container .true {
   background-color: green;
   background-image: url(/check_circle-24px.d7c35ddf.svg);
   background-repeat: no-repeat;
@@ -68,7 +68,7 @@ body .container .correct {
   fill: white;
   color: white;
 }
-body .container .correct:hover {
+body .container .true:hover {
   background-color: green;
   background-image: url(/check_circle-24px.d7c35ddf.svg);
   background-repeat: no-repeat;
@@ -76,14 +76,14 @@ body .container .correct:hover {
   fill: white;
   color: white;
 }
-body .container .answered {
+body .container .responded {
   background-color: red;
   background-image: url(/cancel-24px.64a71567.svg);
   background-repeat: no-repeat;
   background-position: 97% 50%;
   fill: white;
 }
-body .container .answered:hover {
+body .container .responded:hover {
   background-color: red;
   background-image: url(/cancel-24px.64a71567.svg);
   background-repeat: no-repeat;

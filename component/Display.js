@@ -4,22 +4,24 @@ function Display({ value, collectionItems, item1, fetchingData, count, setCount 
 const [correct, setCorrect] = useState(false);
 const [answered, setAnswered] = useState(false);
 
-function handleClickButton(e) {
-
-    setAnswered(true);
-    if ((e.target.dataset.value) === (value[item1].name)) {
-        e.target.classList.add("correct");
-        setCorrect(true);
-        setCount(prev => prev + 1);
-    } else {
-        setCorrect(false);
-        e.target.classList.add("answered");
+    function handleClickButton(e) {
+        setAnswered(true);
+        if ((e.target.dataset.value) === (value[item1].name)) {
+            e.target.classList.add("true");
+            setCorrect(true);
+        } else if ((e.target.dataset.value) !== (value[item1].name)){
+            setCorrect(false);
+            e.target.classList.add("responded");
+            const rightButton = value[collectionItems.find(item => {
+                return value[item].name === value[item1].name
+            })].name;
+            console.log(rightButton);
+        }
     }
-}
     const random = Math.floor(Math.random() * 2);
     if ((!value[item1].capital) || (!value[item1].flag)) {
         fetchingData()
-    }
+    } 
     return (
         <>
             <h1>COUNTRY QUIZ</h1>
@@ -35,6 +37,7 @@ function handleClickButton(e) {
                     return (
                         <div key={value[map].name}>
                             <button
+                                disabled={answered}
                                 value={value[map].name}
                                 data-value={value[map].name}
                                 onClick={handleClickButton}
@@ -50,6 +53,7 @@ function handleClickButton(e) {
                     fetchingData={fetchingData}
                     correct={correct}
                     setAnswered={setAnswered}
+                    setCount={setCount}
                 />}
             </div>
         </>
