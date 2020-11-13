@@ -11,14 +11,14 @@ function Displaycontent({
     count,
     value,
     collectionItems,
-    // rightColor,
     item1,
-    setCount,}) {
+    setCount, }) {
 
-    const MathRandom = Math.floor(Math.random() * 4);
-    if ((!value[item1].capital) || (!value[item1].flag)) {
-        fetchingData()
-    }
+    // A variable that randomise the question displayed.
+    const MathRandom = Math.floor(Math.random() * 2);
+    // if ((!value[item1].capital) || (!value[item1].flag)) {
+    //     fetchingData()
+    // }
 
     return (
         <div>

@@ -33880,7 +33880,8 @@ function Restart({
   count,
   setCount
 }) {
-  function handleStart() {
+  // Function that reruns the fetchingData() function and setting the setCount() function back to zero.
+  function handleRestart() {
     fetchingData();
     setCount(0);
   }
@@ -33903,7 +33904,7 @@ function Restart({
     to: "/"
   }, /*#__PURE__*/_react.default.createElement("button", {
     className: "btn_tryAigain",
-    onClick: handleStart
+    onClick: handleRestart
   }, "Try again")));
 }
 
@@ -33981,15 +33982,13 @@ function Displaycontent({
   count,
   value,
   collectionItems,
-  // rightColor,
   item1,
   setCount
 }) {
-  const MathRandom = Math.floor(Math.random() * 4);
-
-  if (!value[item1].capital || !value[item1].flag) {
-    fetchingData();
-  }
+  // A variable that randomise the question displayed.
+  const MathRandom = Math.floor(Math.random() * 2); // if ((!value[item1].capital) || (!value[item1].flag)) {
+  //     fetchingData()
+  // }
 
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
     className: "container"
@@ -34054,29 +34053,33 @@ function Display({
   count,
   setCount
 }) {
-  // State for checking whether the answer is correct or not
-  const [correct, setCorrect] = (0, _react.useState)(false); // State for checking whether the has anwered or not
+  // State for checking whether the user's answer is correct or not.
+  const [correct, setCorrect] = (0, _react.useState)(false); // State for checking whether the user has anwered or not.
 
-  const [answered, setAnswered] = (0, _react.useState)(false);
-  const [rightColor, setRightColor] = (0, _react.useState)(false); // Function for setting the condition whether the user has answered or not yet 
-  // Function for setting the condition whether the answer is correct or incorrect 
+  const [answered, setAnswered] = (0, _react.useState)(false); // Function for setting the condition whether the user has answered or not yet.
+  // Function for setting the condition whether the answer is correct or incorrect.
 
   function handleClickButton(e) {
     setAnswered(true);
 
     if (e.target.dataset.value === value[item1].name) {
-      e.target.classList.add("true");
+      // If the condition is true, add this "true" class and set this setCorrect function into true.
+      e.target.classList.add("true_answer");
       setCorrect(true);
     } else if (e.target.dataset.value !== value[item1].name) {
-      setCorrect(false);
-      e.target.classList.add("responded");
+      // If the condition is true, add this "responded" class and set this setCorrect function into false.
+      e.target.classList.add("false_answer");
+      setCorrect(false); // Finding the correct answer so that I can grab the button.
+
       const rightButton = value[collectionItems.find(item => {
         return value[item].name === value[item1].name;
-      })].name;
-      const buttons = Array.from(document.querySelectorAll(".buttons"));
-      const correctBtn = buttons.find(button => button.dataset.value == rightButton);
-      correctBtn.classList.add("true");
-      setRightColor(true);
+      })].name; // Grab all of the buttons in order to find the correct one.
+
+      const buttons = Array.from(document.querySelectorAll(".buttons")); // Finding the button by comparing the the value of the buttons and the correct value.
+
+      const correctBtn = buttons.find(button => button.dataset.value == rightButton); // Adding this class on the rigth button when the user clicks the wrong button.
+
+      correctBtn.classList.add("true_answer");
     }
   }
 
@@ -34091,8 +34094,7 @@ function Display({
     setCount: setCount,
     value: value,
     collectionItems: collectionItems,
-    item1: item1,
-    rightColor: rightColor
+    item1: item1
   }));
 }
 
@@ -34123,8 +34125,10 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 const API = "https://restcountries.eu/rest/v2/all";
 
 function App() {
-  const [value, setValue] = (0, _react.useState)([]);
-  const [count, setCount] = (0, _react.useState)(0);
+  // States for storing the data from fetch.
+  const [value, setValue] = (0, _react.useState)([]); // States for setting up the counter.
+
+  const [count, setCount] = (0, _react.useState)(0); // Fething the data and store it inside of state above.
 
   async function fetchingData() {
     const data = await fetch(API);
@@ -34134,7 +34138,8 @@ function App() {
 
   (0, _react.useEffect)(() => {
     fetchingData();
-  }, []);
+  }, []); // Creating four random variables for the four value to display.
+
   const item1 = Math.floor(Math.random() * value.length);
   const item2 = Math.floor(Math.random() * value.length);
   const item3 = Math.floor(Math.random() * value.length);
@@ -34142,9 +34147,11 @@ function App() {
 
   if (item1 === item2 || item1 === item4 || item2 === item3 || item3 === item4 || item1 === item3) {
     return null;
-  }
+  } // Grouping all of the items.
 
-  const groupItems = [item1, item4, item2, item3];
+
+  const groupItems = [item1, item4, item2, item3]; // Sorting the items in order to avoid getting the same data over again.
+
   const collectionItems = groupItems.sort((a, b) => b - a);
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "principal_container"

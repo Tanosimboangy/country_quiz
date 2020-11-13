@@ -6,7 +6,6 @@ body {
   background-size: cover;
   background-position: 50% 50%;
   background: url(/background.59c06501.png);
-  font-family: Arial, Helvetica, sans-serif;
 }
 body #root .principal_container h1 {
   margin: 0;
@@ -47,7 +46,6 @@ body #root .principal_container .container h2 {
   font-weight: bold;
   line-height: 36px;
   font-style: normal;
-  font-family: Arial, Helvetica, sans-serif;
 }
 body #root .principal_container .container .flag_question {
   margin: 0;
@@ -58,7 +56,6 @@ body #root .principal_container .container .flag_question {
   font-weight: bold;
   line-height: 36px;
   font-style: normal;
-  font-family: Arial, Helvetica, sans-serif;
 }
 body #root .principal_container .container .button_container .buttons {
   width: 100%;
@@ -75,34 +72,33 @@ body #root .principal_container .container .button_container .buttons {
   box-sizing: border-box;
   color: rgba(96, 102, 208, 0.8);
   border: 2px solid rgba(96, 102, 208, 0.7);
-  font-family: Arial, Helvetica, sans-serif;
 }
 body #root .principal_container .container .button_container .buttons:hover {
   color: white;
   background: #F9A826;
 }
-body #root .principal_container .container .button_container .true {
+body #root .principal_container .container .button_container .true_answer {
   color: white;
   background: #60bf88;
   background-repeat: no-repeat;
   background-position: 97% 50%;
   background-image: url(/check_circle.4c17ec5b.svg);
 }
-body #root .principal_container .container .button_container .true:hover {
+body #root .principal_container .container .button_container .true_answer:hover {
   color: white;
   background: #60bf88;
   background-position: 97% 50%;
   background-repeat: no-repeat;
   background-image: url(/check_circle.4c17ec5b.svg);
 }
-body #root .principal_container .container .button_container .responded {
+body #root .principal_container .container .button_container .false_answer {
   color: white;
   background: #ea8282;
   background-repeat: no-repeat;
   background-position: 97% 50%;
   background-image: url(/cancel.62487108.svg);
 }
-body #root .principal_container .container .button_container .responded:hover {
+body #root .principal_container .container .button_container .false_answer:hover {
   color: white;
   background: #ea8282;
   background-repeat: no-repeat;
@@ -156,7 +152,6 @@ body #root .principal_container .btn_next {
   font-weight: 700;
   font-size: 18px;
   line-height: 27px;
-  font-family: "Poppins";
   padding: 15px 30px;
   border-radius: 12px;
   color: #fff;

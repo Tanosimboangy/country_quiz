@@ -1,4 +1,3 @@
-
 body {
     margin: 0;
     padding: 16px;
@@ -7,7 +6,6 @@ body {
     background-size: cover;
     background-position: 50% 50%;
     background: url(./img/background.png);
-    font-family: Arial, Helvetica, sans-serif;
     #root {
         .principal_container {
             h1 {
@@ -48,7 +46,6 @@ body {
                     font-weight: bold;
                     line-height: 36px;
                     font-style: normal;
-                    font-family: Arial, Helvetica, sans-serif;
                 }
                 .flag_question {
                     margin: 0;
@@ -59,7 +56,6 @@ body {
                     font-weight: bold;
                     line-height: 36px;
                     font-style: normal;
-                    font-family: Arial, Helvetica, sans-serif;
                 }
                 .button_container {
                     .buttons {
@@ -77,34 +73,33 @@ body {
                         box-sizing: border-box;
                         color: rgba(96,102,208,.8);
                         border: 2px solid rgba(96,102,208,.7);
-                        font-family: Arial, Helvetica, sans-serif;
                     }
                     .buttons:hover {
                         color: white;
                         background: #F9A826;
                     }
-                    .true {
+                    .true_answer {
                         color: white;
                         background: rgb(96, 191, 136);
                         background-repeat: no-repeat;
                         background-position: 97% 50%;
                         background-image: url(./img/check_circle.svg);
                     }
-                    .true:hover {
+                    .true_answer:hover {
                         color: white;
                         background: rgb(96, 191, 136);
                         background-position: 97% 50%;
                         background-repeat: no-repeat;
                         background-image: url(./img/check_circle.svg);
                     }
-                    .responded {
+                    .false_answer {
                         color: white;
                         background: rgb(234, 130, 130);
                         background-repeat: no-repeat;
                         background-position: 97% 50%;
                         background-image: url(./img/cancel.svg);
                     }
-                    .responded:hover {
+                    .false_answer:hover {
                         color: white;
                         background: rgb(234, 130, 130);
                         background-repeat: no-repeat;
@@ -160,7 +155,6 @@ body {
                 font-weight: 700;
                 font-size: 18px;
                 line-height: 27px;
-                font-family: "Poppins";
                 padding: 15px 30px;
                 border-radius: 12px;
                 color: #fff;

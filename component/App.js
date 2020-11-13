@@ -6,9 +6,11 @@ import Display from "./Display";
 const API = "https://restcountries.eu/rest/v2/all";
 
 function App() {
-
+    // States for storing the data from fetch.
     const [value, setValue] = useState([]);
+    // States for setting up the counter.
     const [count, setCount] = useState(0);
+    // Fething the data and store it inside of state above.
     async function fetchingData() {
         const data = await fetch(API);
         const res = await data.json();
@@ -17,6 +19,8 @@ function App() {
     useEffect(() => {
         fetchingData();
     }, [])
+
+    // Creating four random variables for the four value to display.
     const item1 = Math.floor(Math.random() * value.length)
     const item2 = Math.floor(Math.random() * value.length)
     const item3 = Math.floor(Math.random() * value.length)
@@ -26,8 +30,11 @@ function App() {
         return null
     }
 
+    // Grouping all of the items.
     const groupItems = [item1, item4, item2, item3]
+    // Sorting the items in order to avoid getting the same data over again.
     const collectionItems = groupItems.sort((a, b) => b - a);
+
     return (
         <div className="principal_container">
             <h1>COUNTRY QUIZ</h1>
