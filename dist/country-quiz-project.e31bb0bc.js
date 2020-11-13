@@ -33998,7 +33998,12 @@ function Displaycontent({
     className: "undraw_adventure",
     src: _undraw_adventure.default,
     alt: "this is an undraw adventure"
+  }), MathRandomQuestions === 0 ? /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: data[item1].flag,
+    className: "flag"
   }), /*#__PURE__*/_react.default.createElement("h2", {
+    className: "flag_question"
+  }, "Which country does this flag belong to?")) : /*#__PURE__*/_react.default.createElement("h2", {
     className: "capitale_question"
   }, data[item1].capital && data[item1].capital, " is the capital of?"), collectionItems.map(map => {
     return /*#__PURE__*/_react.default.createElement("div", {

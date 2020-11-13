@@ -24,15 +24,14 @@ function Displaycontent({
         <div>
             <div className="container">
                 <img className="undraw_adventure" src={undraw_adventure} alt="this is an undraw adventure" />
-                <h2 className="capitale_question">{data[item1].capital && data[item1].capital} is the capital of?</h2>
-                {/* {MathRandomQuestions === 0  
+                {MathRandomQuestions === 0  
                     ? (<div>
                         <img src={data[item1].flag} className="flag" />
                         <h2 className="flag_question">Which country does this flag belong to?</h2>
                     </div>)
                     : 
                     <h2 className="capitale_question">{data[item1].capital && data[item1].capital} is the capital of?</h2>
-                } */}
+                }
                 {collectionItems.map(map => {
                     return (
                         <div
