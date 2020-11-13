@@ -34054,13 +34054,13 @@ function Display({
       setCorrect(true);
     } else if (e.target.dataset.value !== value[item1].name) {
       setCorrect(false);
-      e.target.classList.add("responded"); // Getting the right button with the right answer
-      // const rightButton = value[collectionItems.find(item => {
-      //     return value[item].name === value[item1].name;
-      // })].name;
-      // console.log(rightButton);
-      // rightButton.style.backgroundColor = "true"
-
+      e.target.classList.add("responded");
+      const rightButton = value[collectionItems.find(item => {
+        return value[item].name === value[item1].name;
+      })].name;
+      const buttons = Array.from(document.querySelectorAll(".buttons"));
+      const correctBtn = buttons.find(button => button.dataset.value == rightButton);
+      correctBtn.classList.add("true");
       setRightColor(true);
     }
   }
@@ -34200,7 +34200,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50893" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53995" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

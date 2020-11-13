@@ -31,9 +31,9 @@ body #root .principal_container .container {
 }
 body #root .principal_container .container .adventure_image {
   position: absolute;
-  top: -16%;
+  top: -12%;
   right: 1%;
-  width: 40%;
+  width: 30%;
 }
 body #root .principal_container .container img {
   width: 84px;
