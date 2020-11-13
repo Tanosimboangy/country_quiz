@@ -32,8 +32,8 @@ body {
                 position: relative;
                 .undraw_adventure {
                     position: absolute;
-                    top: -12%;
-                    right: 1%;
+                    top: -62px;
+                    right: 1px;
                     width: 30%;
                 }
                 img {
@@ -112,64 +112,62 @@ body {
                         background-image: url(./img/cancel.svg);
                     }
                 }
+                .restart {
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    .undraw_winners {
+                        width: 238px;
+                    }
+                    h2 {
+                        font-size: 24px;
+                        color: #2f527b;
+                        padding-top: 50px;
+                        line-height: 36px;
+                        padding-bottom: 20px;
+                    }
+                    p {
+                        font-size: 24px;
+                        color: #2f527b;
+                        padding-top: 30px;
+                        line-height: 36px;
+                        padding-bottom: 20px;
+                        margin: 0;
+                    }
+                    .btn_tryAigain {
+                        width: 209px;
+                        height: 62px;
+                        outline: none;
+                        font-size: 18px;
+                        font-weight: 600;
+                        margin-top: 30px;
+                        color: #1d355d;
+                        line-height: 27px;
+                        background: #fff;
+                        margin-bottom: 20px;
+                        border-radius: 12px;
+                        box-sizing: border-box;
+                        border: 2px solid #1d355d;
+                    }
+                    .btn_tryAigain:hover {
+                        background: #F9A826;
+                    }
+                }
             }
             .btn_next {
                 border: none;
                 outline: none;
                 font-weight: 700;
                 font-size: 18px;
-                margin-top: 10px;
                 line-height: 27px;
                 font-family: "Poppins";
                 padding: 15px 30px;
-                margin-bottom: 10px;
                 border-radius: 12px;
                 color: #fff;
                 background: #f9a826;
                 box-shadow: 0 2px 4px rgba(252,168,47,.4);
 
                 
-            }
-            .restart {
-                display: flex;
-                align-items: center;
-                flex-direction: column;
-                .undraw_winners {
-                    width: 238px;
-                }
-                h2 {
-                    font-size: 24px;
-                    color: #2f527b;
-                    padding-top: 50px;
-                    line-height: 36px;
-                    padding-bottom: 20px;
-                }
-                p {
-                    font-size: 24px;
-                    color: #2f527b;
-                    padding-top: 30px;
-                    line-height: 36px;
-                    padding-bottom: 20px;
-                    margin: 0;
-                }
-                .btn_tryAigain {
-                    width: 209px;
-                    height: 62px;
-                    outline: none;
-                    font-size: 18px;
-                    font-weight: 600;
-                    margin-top: 30px;
-                    color: #1d355d;
-                    line-height: 27px;
-                    background: #fff;
-                    margin-bottom: 20px;
-                    border-radius: 12px;
-                    box-sizing: border-box;
-                    border: 2px solid #1d355d;
-                }
-                .btn_tryAigain:hover {
-                    background: #F9A826;
-                }
             }
         }
     }

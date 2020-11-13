@@ -31,8 +31,8 @@ body #root .principal_container .container {
 }
 body #root .principal_container .container .undraw_adventure {
   position: absolute;
-  top: -12%;
-  right: 1%;
+  top: -62px;
+  right: 1px;
   width: 30%;
 }
 body #root .principal_container .container img {
@@ -109,37 +109,22 @@ body #root .principal_container .container .button_container .responded:hover {
   background-position: 97% 50%;
   background-image: url(/cancel.62487108.svg);
 }
-body #root .principal_container .btn_next {
-  border: none;
-  outline: none;
-  font-weight: 700;
-  font-size: 18px;
-  margin-top: 10px;
-  line-height: 27px;
-  font-family: "Poppins";
-  padding: 15px 30px;
-  margin-bottom: 10px;
-  border-radius: 12px;
-  color: #fff;
-  background: #f9a826;
-  box-shadow: 0 2px 4px rgba(252, 168, 47, 0.4);
-}
-body #root .principal_container .restart {
+body #root .principal_container .container .restart {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
-body #root .principal_container .restart .undraw_winners {
+body #root .principal_container .container .restart .undraw_winners {
   width: 238px;
 }
-body #root .principal_container .restart h2 {
+body #root .principal_container .container .restart h2 {
   font-size: 24px;
   color: #2f527b;
   padding-top: 50px;
   line-height: 36px;
   padding-bottom: 20px;
 }
-body #root .principal_container .restart p {
+body #root .principal_container .container .restart p {
   font-size: 24px;
   color: #2f527b;
   padding-top: 30px;
@@ -147,7 +132,7 @@ body #root .principal_container .restart p {
   padding-bottom: 20px;
   margin: 0;
 }
-body #root .principal_container .restart .btn_tryAigain {
+body #root .principal_container .container .restart .btn_tryAigain {
   width: 209px;
   height: 62px;
   outline: none;
@@ -162,8 +147,21 @@ body #root .principal_container .restart .btn_tryAigain {
   box-sizing: border-box;
   border: 2px solid #1d355d;
 }
-body #root .principal_container .restart .btn_tryAigain:hover {
+body #root .principal_container .container .restart .btn_tryAigain:hover {
   background: #F9A826;
+}
+body #root .principal_container .btn_next {
+  border: none;
+  outline: none;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 27px;
+  font-family: "Poppins";
+  padding: 15px 30px;
+  border-radius: 12px;
+  color: #fff;
+  background: #f9a826;
+  box-shadow: 0 2px 4px rgba(252, 168, 47, 0.4);
 }
 
 /*# sourceMappingURL=/country-quiz-project.80ee2152.css.map */
