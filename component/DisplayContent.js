@@ -9,42 +9,43 @@ function Displaycontent({
     ButtonToNext,
     fetchingData,
     count,
-    value,
+    data,
     collectionItems,
     item1,
     setCount, }) {
 
     // A variable that randomise the question displayed.
-    const MathRandom = Math.floor(Math.random() * 2);
-    // if ((!value[item1].capital) || (!value[item1].flag)) {
-    //     fetchingData()
-    // }
+    const MathRandomQuestions = Math.floor(Math.random() * 2);
+    if ((!data[item1].capital) || (!data[item1].flag)) {
+        fetchingData()
+    }
 
     return (
         <div>
             <div className="container">
                 <img className="undraw_adventure" src={undraw_adventure} alt="this is an undraw adventure" />
-                {MathRandom === 0
-                    ? <h2 className="capitale_question">{value[item1].capital ? value[item1].capital : ""} is the capital of?</h2>
+                {/* <h2 className="capitale_question">{data[item1].capital ? data[item1].capital : ""} is the capital of?</h2> */}
+                {MathRandomQuestions === 1 ? 
+                    <h2 className="capitale_question">{data[item1].capital ? data[item1].capital : ""} is the capital of?</h2>
                     : (<div >
-                        <img src={value[item1].flag} className="flag" />
+                        <img src={data[item1].flag} className="flag" />
                         <h2 className="flag_question">Which country does this flag belong to?</h2>
                     </div>)
                 }
                 {collectionItems.map(map => {
                     return (
                         <div
-                            key={value[map].name}
+                            key={data[map].name}
                             className="button_container"
                         >
                             <button
                                 disabled={answered}
-                                value={value[map].name}
-                                data-value={value[map].name}
+                                value={data[map].name}
+                                data-value={data[map].name}
                                 onClick={handleClickButton}
                                 className="buttons"
                             >
-                                {value[map].name}<br />
+                                {data[map].name}<br />
                             </button>
                         </div>
                     )

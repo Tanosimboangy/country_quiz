@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ButtonToNext from "./ButtonToNext";
 import Displaycontent from "./Displaycontent";
 
-function Display({ value, collectionItems, item1, fetchingData, count, setCount }) {
+function Display({ data, collectionItems, item1, fetchingData, count, setCount }) {
     
     // State for checking whether the user's answer is correct or not.
     const [correct, setCorrect] = useState(false);
@@ -13,17 +13,17 @@ function Display({ value, collectionItems, item1, fetchingData, count, setCount 
     // Function for setting the condition whether the answer is correct or incorrect.
     function handleClickButton(e) {
         setAnswered(true);
-        if ((e.target.dataset.value) === (value[item1].name)) {
+        if ((e.target.dataset.value) === (data[item1].name)) {
             // If the condition is true, add this "true" class and set this setCorrect function into true.
             e.target.classList.add("true_answer");
             setCorrect(true);
-        } else if ((e.target.dataset.value) !== (value[item1].name)) {
+        } else if ((e.target.dataset.value) !== (data[item1].name)) {
             // If the condition is true, add this "responded" class and set this setCorrect function into false.
             e.target.classList.add("false_answer");
             setCorrect(false);
             // Finding the correct answer so that I can grab the button.
-            const rightButton = value[collectionItems.find(item => {
-                return value[item].name === value[item1].name;
+            const rightButton = data[collectionItems.find(item => {
+                return data[item].name === data[item1].name;
             })].name;
             // Grab all of the buttons in order to find the correct one.
             const buttons = Array.from(document.querySelectorAll(".buttons"));
@@ -45,7 +45,7 @@ function Display({ value, collectionItems, item1, fetchingData, count, setCount 
                 fetchingData={fetchingData}
                 count={count}
                 setCount={setCount}
-                value={value}
+                data={data}
                 collectionItems={collectionItems}
                 item1={item1}
             />

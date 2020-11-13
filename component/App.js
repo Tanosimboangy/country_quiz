@@ -7,24 +7,25 @@ const API = "https://restcountries.eu/rest/v2/all";
 
 function App() {
     // States for storing the data from fetch.
-    const [value, setValue] = useState([]);
+    const [data, setData] = useState([]);
     // States for setting up the counter.
     const [count, setCount] = useState(0);
+
     // Fething the data and store it inside of state above.
     async function fetchingData() {
         const data = await fetch(API);
         const res = await data.json();
-        setValue(res);
+        setData(res);
     }
     useEffect(() => {
         fetchingData();
     }, [])
 
     // Creating four random variables for the four value to display.
-    const item1 = Math.floor(Math.random() * value.length)
-    const item2 = Math.floor(Math.random() * value.length)
-    const item3 = Math.floor(Math.random() * value.length)
-    const item4 = Math.floor(Math.random() * value.length)
+    const item1 = Math.floor(Math.random() * data.length)
+    const item2 = Math.floor(Math.random() * data.length)
+    const item3 = Math.floor(Math.random() * data.length)
+    const item4 = Math.floor(Math.random() * data.length)
 
     if ((item1 === item2) || (item1 === item4) || (item2 === item3) || (item3 === item4) || (item1 === item3)) {
         return null
@@ -37,12 +38,13 @@ function App() {
 
     return (
         <div className="principal_container">
-            <h1>COUNTRY QUIZ</h1>
+            <h1>COUNTRY QUIZ</h1> 
             <Router >
                 <Switch>
                     <Route exact path="/">
                         <Display
-                            value={value}
+                            data={data}
+                            setData={setData}
                             collectionItems={collectionItems}
                             count={count}
                             setCount={setCount}
@@ -50,7 +52,6 @@ function App() {
                             item2={item2}
                             item3={item3}
                             item4={item4}
-                            setValue={setValue}
                             fetchingData={fetchingData}
                         />
                     </Route>

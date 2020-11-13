@@ -33980,15 +33980,17 @@ function Displaycontent({
   ButtonToNext,
   fetchingData,
   count,
-  value,
+  data,
   collectionItems,
   item1,
   setCount
 }) {
   // A variable that randomise the question displayed.
-  const MathRandom = Math.floor(Math.random() * 2); // if ((!value[item1].capital) || (!value[item1].flag)) {
-  //     fetchingData()
-  // }
+  const MathRandomQuestions = Math.floor(Math.random() * 2);
+
+  if (!data[item1].capital || !data[item1].flag) {
+    fetchingData();
+  }
 
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
     className: "container"
@@ -33996,24 +33998,24 @@ function Displaycontent({
     className: "undraw_adventure",
     src: _undraw_adventure.default,
     alt: "this is an undraw adventure"
-  }), MathRandom === 0 ? /*#__PURE__*/_react.default.createElement("h2", {
+  }), MathRandomQuestions === 1 ? /*#__PURE__*/_react.default.createElement("h2", {
     className: "capitale_question"
-  }, value[item1].capital ? value[item1].capital : "", " is the capital of?") : /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
-    src: value[item1].flag,
+  }, data[item1].capital ? data[item1].capital : "", " is the capital of?") : /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: data[item1].flag,
     className: "flag"
   }), /*#__PURE__*/_react.default.createElement("h2", {
     className: "flag_question"
   }, "Which country does this flag belong to?")), collectionItems.map(map => {
     return /*#__PURE__*/_react.default.createElement("div", {
-      key: value[map].name,
+      key: data[map].name,
       className: "button_container"
     }, /*#__PURE__*/_react.default.createElement("button", {
       disabled: answered,
-      value: value[map].name,
-      "data-value": value[map].name,
+      value: data[map].name,
+      "data-value": data[map].name,
       onClick: handleClickButton,
       className: "buttons"
-    }, value[map].name, /*#__PURE__*/_react.default.createElement("br", null)));
+    }, data[map].name, /*#__PURE__*/_react.default.createElement("br", null)));
   }), answered && /*#__PURE__*/_react.default.createElement(ButtonToNext, {
     count: count,
     fetchingData: fetchingData,
@@ -34046,7 +34048,7 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function Display({
-  value,
+  data,
   collectionItems,
   item1,
   fetchingData,
@@ -34062,17 +34064,17 @@ function Display({
   function handleClickButton(e) {
     setAnswered(true);
 
-    if (e.target.dataset.value === value[item1].name) {
+    if (e.target.dataset.value === data[item1].name) {
       // If the condition is true, add this "true" class and set this setCorrect function into true.
       e.target.classList.add("true_answer");
       setCorrect(true);
-    } else if (e.target.dataset.value !== value[item1].name) {
+    } else if (e.target.dataset.value !== data[item1].name) {
       // If the condition is true, add this "responded" class and set this setCorrect function into false.
       e.target.classList.add("false_answer");
       setCorrect(false); // Finding the correct answer so that I can grab the button.
 
-      const rightButton = value[collectionItems.find(item => {
-        return value[item].name === value[item1].name;
+      const rightButton = data[collectionItems.find(item => {
+        return data[item].name === data[item1].name;
       })].name; // Grab all of the buttons in order to find the correct one.
 
       const buttons = Array.from(document.querySelectorAll(".buttons")); // Finding the button by comparing the the value of the buttons and the correct value.
@@ -34092,7 +34094,7 @@ function Display({
     fetchingData: fetchingData,
     count: count,
     setCount: setCount,
-    value: value,
+    data: data,
     collectionItems: collectionItems,
     item1: item1
   }));
@@ -34126,24 +34128,24 @@ const API = "https://restcountries.eu/rest/v2/all";
 
 function App() {
   // States for storing the data from fetch.
-  const [value, setValue] = (0, _react.useState)([]); // States for setting up the counter.
+  const [data, setData] = (0, _react.useState)([]); // States for setting up the counter.
 
   const [count, setCount] = (0, _react.useState)(0); // Fething the data and store it inside of state above.
 
   async function fetchingData() {
     const data = await fetch(API);
     const res = await data.json();
-    setValue(res);
+    setData(res);
   }
 
   (0, _react.useEffect)(() => {
     fetchingData();
   }, []); // Creating four random variables for the four value to display.
 
-  const item1 = Math.floor(Math.random() * value.length);
-  const item2 = Math.floor(Math.random() * value.length);
-  const item3 = Math.floor(Math.random() * value.length);
-  const item4 = Math.floor(Math.random() * value.length);
+  const item1 = Math.floor(Math.random() * data.length);
+  const item2 = Math.floor(Math.random() * data.length);
+  const item3 = Math.floor(Math.random() * data.length);
+  const item4 = Math.floor(Math.random() * data.length);
 
   if (item1 === item2 || item1 === item4 || item2 === item3 || item3 === item4 || item1 === item3) {
     return null;
@@ -34159,7 +34161,8 @@ function App() {
     exact: true,
     path: "/"
   }, /*#__PURE__*/_react.default.createElement(_Display.default, {
-    value: value,
+    data: data,
+    setData: setData,
     collectionItems: collectionItems,
     count: count,
     setCount: setCount,
@@ -34167,7 +34170,6 @@ function App() {
     item2: item2,
     item3: item3,
     item4: item4,
-    setValue: setValue,
     fetchingData: fetchingData
   })), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/restart"
@@ -34222,7 +34224,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53995" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58297" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

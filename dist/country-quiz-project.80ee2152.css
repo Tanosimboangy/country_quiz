@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Poppins_bold";
+  src: local(Poppins_bold), url(/Poppins-Bold.93a7e675.woff2) format("woff2"), url(/Poppins-Bold.4acc6197.woff) format("woff");
+}
+@font-face {
+  font-family: "Poppins_Regular";
+  src: local(Poppins_Regular), url(/Poppins-Regular.b609ad6c.woff2) format("woff2"), url(/Poppins-Regular.9ae34984.woff) format("woff");
+}
 body {
   margin: 0;
   padding: 16px;
@@ -10,12 +18,16 @@ body {
 body #root .principal_container h1 {
   margin: 0;
   margin: auto;
-  color: white;
   max-width: 370px;
-  font-weight: 600;
   max-width: 400px;
   text-align: left;
   padding-bottom: 20px;
+  font-family: "Poppins_bold";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 54px;
+  color: #F2F2F2;
 }
 body #root .principal_container .container {
   margin: auto;
@@ -40,12 +52,13 @@ body #root .principal_container .container img {
 body #root .principal_container .container h2 {
   margin: 0;
   padding: 10px 0;
-  font-size: 24px;
   max-width: 198px;
-  color: #2F527B;
-  font-weight: bold;
   line-height: 36px;
-  font-style: normal;
+  font-family: "Poppins_Regular";
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 36px;
+  color: #2F527B;
 }
 body #root .principal_container .container .flag_question {
   margin: 0;
@@ -55,7 +68,6 @@ body #root .principal_container .container .flag_question {
   color: #2F527B;
   font-weight: bold;
   line-height: 36px;
-  font-style: normal;
 }
 body #root .principal_container .container .button_container .buttons {
   width: 100%;
@@ -72,6 +84,7 @@ body #root .principal_container .container .button_container .buttons {
   box-sizing: border-box;
   color: rgba(96, 102, 208, 0.8);
   border: 2px solid rgba(96, 102, 208, 0.7);
+  font-family: "Poppins_Regular";
 }
 body #root .principal_container .container .button_container .buttons:hover {
   color: white;
@@ -114,11 +127,12 @@ body #root .principal_container .container .restart .undraw_winners {
   width: 238px;
 }
 body #root .principal_container .container .restart h2 {
-  font-size: 24px;
-  color: #2f527b;
-  padding-top: 50px;
-  line-height: 36px;
-  padding-bottom: 20px;
+  padding-top: 20px;
+  font-family: "Poppins_bold";
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 64px;
+  color: #1D355D;
 }
 body #root .principal_container .container .restart p {
   font-size: 24px;
@@ -134,11 +148,9 @@ body #root .principal_container .container .restart .btn_tryAigain {
   outline: none;
   font-size: 18px;
   font-weight: 600;
-  margin-top: 30px;
   color: #1d355d;
   line-height: 27px;
   background: #fff;
-  margin-bottom: 20px;
   border-radius: 12px;
   box-sizing: border-box;
   border: 2px solid #1d355d;
@@ -149,14 +161,15 @@ body #root .principal_container .container .restart .btn_tryAigain:hover {
 body #root .principal_container .btn_next {
   border: none;
   outline: none;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 27px;
   padding: 15px 30px;
   border-radius: 12px;
-  color: #fff;
   background: #f9a826;
   box-shadow: 0 2px 4px rgba(252, 168, 47, 0.4);
+  font-family: "Poppins_bold";
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 27px;
+  color: #FFFFFF;
 }
 
 /*# sourceMappingURL=/country-quiz-project.80ee2152.css.map */
