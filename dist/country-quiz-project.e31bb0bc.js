@@ -33986,7 +33986,7 @@ function Displaycontent({
   setCount
 }) {
   // A variable that randomise the question displayed.
-  const MathRandomQuestions = Math.floor(Math.random() * 2);
+  const MathRandomQuestions = Math.floor(Math.random() * 3);
 
   if (!data[item1].capital || !data[item1].flag) {
     fetchingData();
