@@ -1,28 +1,5 @@
 # Country Quiz
-
-Challenge: Create a country quiz app using an API, and use React to handle the frontend. Don’t look at the existing solution. Fulfill user stories below:
-
-![image](./assets/quiz1.png)
-![image](./assets/quiz2.png)
-![image](./assets/quiz3.png)
-![image](./assets/quiz4.png)
-
--   User story: I can see at least 2 types of question: a city is the capital of.. or a flag belong to country..
--   User story: I can see select an answer
--   User story: I can see if my answer is correct or incorrect
--   User story: When I answer correctly, I can move on to the next question
--   User story: When I answer incorrectly, I can see my results and try again
--   User story: I can try again
-
-**Icon**: https://google.github.io/material-design-icons/
-
-**API**: https://restcountries.eu/. Use data from the API to create questions and answers.
-
-**Design** : https://www.figma.com/file/Gw0ZNBbYN8asqFlZWy3jG1
-
 **Live app** : https://country-quiz-app.netlify.app/
-
-As long as you fulfill all the user stories, you can give your personal touches by adding transition, using your own images, changing colors, or even creating your own layout,...
 
 Once you completed, submit your solutions by providing URLs for both GitHub repository and live app on Netlify and explain briefly what you have done.
 
@@ -32,79 +9,47 @@ Good luck everybody!
 
 Template for your readme :
 
-<!-- Please update value in the {}  -->
 
-<h1 align="center">{Your project name}</h1>
+<h1 align="center">Country Quiz Project</h1>
 
 <div align="center">
   <h3>
-    <a href="https://{your-demo-link.your-domain}">
+    <a href="https://{https://country-quiz-project.netlify.app/}">
       Demo
     </a>
     <span> | </span>
-    <a href="https://{your-url-to-the-solution}">
+    <a href="https://{https://github.com/Tanosimboangy/country-quiz}">
       Solution
     </a>
   </h3>
 </div>
 
-<!-- TABLE OF CONTENTS -->
-
-## Table of Contents
-
--   [Overview](#overview)
-    -   [Built With](#built-with)
--   [Features](#features)
--   [How to use](#how-to-use)
--   [Contact](#contact)
--   [Acknowledgements](#acknowledgements)
-
-<!-- OVERVIEW -->
-
 ## Overview
 
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+![screenshot](./Screenshot/img1.png)
+![screenshot](./Screenshot/img2.png)
+![screenshot](./Screenshot/img3.png)
+![screenshot](./Screenshot/img4.png)
 
-Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
+##   Yuo can see my demo here:
+- You can see my demo in this following link: [https://country-quiz-project.netlify.app/](https://country-quiz-project.netlify.app/).
 
--   Where can I see your demo?
--   What was your experience?
--   What have you learned/improved?
--   Your wisdom? :)
+## My experience:
+- Frankly, I had a lot of struggles accomplishing this project. However, It went well.
+Firstly, I grasped the use of Browserslist in the dependency, because I have trouble with that. This is because while I did not use it, I could not fetch the data, I gave me an error, but as soon as I inseted it in the dependency, it's done.
 
-### Built With
+- Something I have never used before but I applied in this project is importing an image. Import the image as if you are to import a component so that you can use that filename inside of the source
 
-<!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
+## Anything I have learned/improved:
 
--   [React](https://reactjs.org/)
+- While doing this project I leanred: firstly, using all the ways to deal with an array, such as find() and map().
 
-## Features
+- Apart from that, I starated to fully understand more about how to use Router and and Switch, as well as Link, and how they work.
 
-<!-- List the features of your application or follow the template. Don't share the figma file here :) -->
-
-## How To Use
-
-<!-- Example: -->
-
-To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
-
-```bash
-# Clone this repository
-$ git clone https://github.com/your-user-name/your-project-name
-
-# Install dependencies
-$ npm install
-
-# Run the app
-$ npm start
-```
-
-## Acknowledgements
-
-<!-- This section should list any articles or add-ons/plugins that helps you to complete the project. This is optional but it will help you in the future. For example: -->
+## My wisdom:
+- I tried to rely on google, I did a lot of research during while fulfilling this task.
 
 ## Contact
 
--   Website [your-website.com](https://{your-web-site-link})
--   GitHub [@your-username](https://{github.com/your-usermame})
--   Twitter [@your-twitter](https://{twitter.com/your-username})
+-   Website [https://country-quiz-project.netlify.app/](https://country-quiz-project.netlify.app/)
+-   GitHub [Tanosimboangy](https://github.com/Tanosimboangy)
