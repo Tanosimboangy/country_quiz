@@ -29,7 +29,7 @@ body #root .principal_container .container {
   background-color: white;
   position: relative;
 }
-body #root .principal_container .container .adventure_image {
+body #root .principal_container .container .undraw_adventure {
   position: absolute;
   top: -12%;
   right: 1%;
@@ -96,12 +96,14 @@ body #root .principal_container .container .button_container .true:hover {
   background-image: url(/check_circle.4c17ec5b.svg);
 }
 body #root .principal_container .container .button_container .responded {
+  color: white;
   background: #ea8282;
   background-repeat: no-repeat;
   background-position: 97% 50%;
   background-image: url(/cancel.62487108.svg);
 }
 body #root .principal_container .container .button_container .responded:hover {
+  color: white;
   background: #ea8282;
   background-repeat: no-repeat;
   background-position: 97% 50%;
@@ -127,6 +129,9 @@ body #root .principal_container .restart {
   align-items: center;
   flex-direction: column;
 }
+body #root .principal_container .restart .undraw_winners {
+  width: 238px;
+}
 body #root .principal_container .restart h2 {
   font-size: 24px;
   color: #2f527b;
@@ -140,6 +145,7 @@ body #root .principal_container .restart p {
   padding-top: 30px;
   line-height: 36px;
   padding-bottom: 20px;
+  margin: 0;
 }
 body #root .principal_container .restart .btn_tryAigain {
   width: 209px;

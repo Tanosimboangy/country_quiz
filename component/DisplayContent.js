@@ -23,7 +23,7 @@ function Displaycontent({
     return (
         <div>
             <div className="container">
-                <img className="adventure_image" src={undraw_adventure} />
+                <img className="undraw_adventure" src={undraw_adventure} alt="this is an undraw adventure" />
                 {MathRandom === 0
                     ? <h2 className="capitale_question">{value[item1].capital ? value[item1].capital : ""} is the capital of?</h2>
                     : (<div >

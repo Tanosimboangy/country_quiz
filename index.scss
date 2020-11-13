@@ -30,7 +30,7 @@ body {
                 padding-bottom: 32px;
                 background-color: white;
                 position: relative;
-                .adventure_image {
+                .undraw_adventure {
                     position: absolute;
                     top: -12%;
                     right: 1%;
@@ -98,13 +98,15 @@ body {
                         background-image: url(./img/check_circle.svg);
                     }
                     .responded {
-                            background: rgb(234, 130, 130);
+                        color: white;
+                        background: rgb(234, 130, 130);
                         background-repeat: no-repeat;
                         background-position: 97% 50%;
                         background-image: url(./img/cancel.svg);
                     }
                     .responded:hover {
-                            background: rgb(234, 130, 130);
+                        color: white;
+                        background: rgb(234, 130, 130);
                         background-repeat: no-repeat;
                         background-position: 97% 50%;
                         background-image: url(./img/cancel.svg);
@@ -132,6 +134,9 @@ body {
                 display: flex;
                 align-items: center;
                 flex-direction: column;
+                .undraw_winners {
+                    width: 238px;
+                }
                 h2 {
                     font-size: 24px;
                     color: #2f527b;
@@ -145,6 +150,7 @@ body {
                     padding-top: 30px;
                     line-height: 36px;
                     padding-bottom: 20px;
+                    margin: 0;
                 }
                 .btn_tryAigain {
                     width: 209px;

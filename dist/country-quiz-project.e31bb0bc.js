@@ -33853,7 +33853,11 @@ if ("development" !== "production") {
     style: _propTypes.default.object
   });
 }
-},{"react-router":"node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"node_modules/react/index.js","history":"node_modules/history/esm/history.js","prop-types":"node_modules/prop-types/index.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"component/Restart.js":[function(require,module,exports) {
+},{"react-router":"node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"node_modules/react/index.js","history":"node_modules/history/esm/history.js","prop-types":"node_modules/prop-types/index.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"img/undraw_adventure.svg":[function(require,module,exports) {
+module.exports = "/undraw_adventure.be647353.svg";
+},{}],"img/undraw_winners.svg":[function(require,module,exports) {
+module.exports = "/undraw_winners.9c22d644.svg";
+},{}],"component/Restart.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33864,6 +33868,10 @@ exports.default = void 0;
 var _react = _interopRequireDefault(require("react"));
 
 var _reactRouterDom = require("react-router-dom");
+
+var _undraw_adventure = _interopRequireDefault(require("../img/undraw_adventure.svg"));
+
+var _undraw_winners = _interopRequireDefault(require("../img/undraw_winners.svg"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -33879,7 +33887,15 @@ function Restart({
 
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "restart"
-  }, /*#__PURE__*/_react.default.createElement("h2", null, "Result"), /*#__PURE__*/_react.default.createElement("p", null, "You got ", /*#__PURE__*/_react.default.createElement("b", {
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    className: "undraw_adventure",
+    src: _undraw_adventure.default,
+    alt: "this is an undraw adventure"
+  }), /*#__PURE__*/_react.default.createElement("img", {
+    className: "undraw_winners",
+    src: _undraw_winners.default,
+    alt: "this is an undraw winners"
+  }), /*#__PURE__*/_react.default.createElement("h2", null, "Result"), /*#__PURE__*/_react.default.createElement("p", null, "You got ", /*#__PURE__*/_react.default.createElement("b", {
     style: {
       color: "green"
     }
@@ -33893,7 +33909,7 @@ function Restart({
 
 var _default = Restart;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"component/ButtonToNext.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../img/undraw_adventure.svg":"img/undraw_adventure.svg","../img/undraw_winners.svg":"img/undraw_winners.svg"}],"component/ButtonToNext.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33941,9 +33957,7 @@ function ButtonToNext({
 
 var _default = ButtonToNext;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"img/undraw_adventure.svg":[function(require,module,exports) {
-module.exports = "/undraw_adventure.be647353.svg";
-},{}],"component/Displaycontent.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"component/Displaycontent.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33980,8 +33994,9 @@ function Displaycontent({
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
     className: "container"
   }, /*#__PURE__*/_react.default.createElement("img", {
-    className: "adventure_image",
-    src: _undraw_adventure.default
+    className: "undraw_adventure",
+    src: _undraw_adventure.default,
+    alt: "this is an undraw adventure"
   }), MathRandom === 0 ? /*#__PURE__*/_react.default.createElement("h2", {
     className: "capitale_question"
   }, value[item1].capital ? value[item1].capital : "", " is the capital of?") : /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
