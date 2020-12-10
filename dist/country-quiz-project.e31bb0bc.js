@@ -34166,12 +34166,7 @@ function App() {
 
   (0, _react.useEffect)(() => {
     fetchingData();
-  }, []);
-
-  if (data.length = 0) {
-    fetchingData();
-  } // Creating four random variables for the four value to display.
-
+  }, []); // Creating four random variables for the four value to display.
 
   const item1 = Math.floor(Math.random() * data.length);
   const item2 = Math.floor(Math.random() * data.length);
@@ -34255,7 +34250,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52583" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56494" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
