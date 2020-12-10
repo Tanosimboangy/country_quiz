@@ -5,9 +5,9 @@ function Questions({data, item1, fetchingData}) {
 
     // A variable that randomise the question displayed.
     const MathRandomQuestions = Math.floor(Math.random() * 2);
-    // if ((!data[item1].capital) || (!data[item1].flag)) {
-    //     fetchingData()
-    // }
+    if ((!data[item1].capital) || (!data[item1].flag)) {
+        fetchingData()
+    }
 
     return (
         <div>

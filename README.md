@@ -1,14 +1,11 @@
 # Country Quiz
-**Live app** : https://country-quiz-app.netlify.app/
 
-Once you completed, submit your solutions by providing URLs for both GitHub repository and live app on Netlify and explain briefly what you have done.
+### I have built this for anyone who is is intersted in learning while having fun the names of all the countries around the world. If you want to challenge yourself and test your knowledge about the names, the capitals and the flags of the countries around the world.
 
-For the custom domain url you'll enter in netlify, please use the following naming convention : **country-quiz-_YOUR_FIRSTNAME_.netlify.app** (replace YOUR_FIRSTNAME by your firstname)
+### You can follow the brief description about this project, in order to know about what it does, how it works, and how to use it.
 
-Good luck everybody!
-
-Template for your readme :
-
+### Please have a great while playing this game. This is the link to the netlify to play it:  
+## **https://country-quiz-project.netlify.app/**
 
 <h1 align="center">Country Quiz Project</h1>
 
@@ -24,32 +21,38 @@ Template for your readme :
   </h3>
 </div>
 
-## Overview
+# *Overview:*
 
 ![screenshot](./Screenshot/img1.png)
 ![screenshot](./Screenshot/img2.png)
 ![screenshot](./Screenshot/img3.png)
 ![screenshot](./Screenshot/img4.png)
 
-##   Yuo can see my demo here:
+# *Yuo can see my demo here:*
 - You can see my demo in this following link: [https://country-quiz-project.netlify.app/](https://country-quiz-project.netlify.app/).
 
-## My experience:
-- Frankly, I had a lot of struggles accomplishing this project. However, It went well.
-Firstly, I grasped the use of Browserslist in the dependency, because I have trouble with that. This is because while I did not use it, I could not fetch the data, It gave me an error, but as soon as I inserted it in the dependency, it's done.
+# *My experience:*
 
-- Something I have never used before but I applied in this project is importing an image. Import the image as if you are to import a component so that you can use that filename inside of the source
+ - Despite of the fact that I encountered a lot of struggles while creating this app, I am very proud that I handle it.
 
-## Anything I have learned/improved:
+ - Firstly, I fetched all of the data through this API [https://restcountries.eu/rest/v2/all](https://restcountries.eu/rest/v2/all). At first, I had a problem with my dependecy, because I did not have the browserslist in there but as soon as I implemented this in my dependency it worked.
 
-- While doing this project I leanred: firstly, using all the ways to deal with an array, such as find() and map().
+- Something I have never used before but I applied in this project is importing an image. Import the image as if you are to import a component so that you can use that filename inside of the source. This is quite interesting because it helps you to maintain your code clean and easily to understand.
+
+# *Anything I have learned/improved:*
+
+- While doing this project, I leanred: firstly, using all the ways to deal with an array, such as find(), map() and filter().
 
 - Apart from that, I starated to fully understand more about how to use Router and and Switch, as well as Link, and how they work.
 
-## My wisdom:
+# *My wisdom:*
+
+- In the face of bugs, I tried to do my best to fully understand what is going on before asking for help from google or anyone.
+
 - I tried to rely on google, I did a lot of research during while fulfilling this task.
 
-## Contact
 
--   Website [https://country-quiz-project.netlify.app/](https://country-quiz-project.netlify.app/)
--   GitHub [Tanosimboangy](https://github.com/Tanosimboangy)
+# *Contact :*
+
+- ## Portfolio [My portfolio](https://cocky-hermann-e30656.netlify.app/)
+- ## GitHub [Tanosimboangy](https://github.com/Tanosimboangy)

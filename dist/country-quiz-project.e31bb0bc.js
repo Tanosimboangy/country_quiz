@@ -33978,9 +33978,11 @@ function Questions({
   fetchingData
 }) {
   // A variable that randomise the question displayed.
-  const MathRandomQuestions = Math.floor(Math.random() * 2); // if ((!data[item1].capital) || (!data[item1].flag)) {
-  //     fetchingData()
-  // }
+  const MathRandomQuestions = Math.floor(Math.random() * 2);
+
+  if (!data[item1].capital || !data[item1].flag) {
+    fetchingData();
+  }
 
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
     className: "undraw_adventure",
@@ -34164,7 +34166,12 @@ function App() {
 
   (0, _react.useEffect)(() => {
     fetchingData();
-  }, []); // Creating four random variables for the four value to display.
+  }, []);
+
+  if (data.length = 0) {
+    fetchingData();
+  } // Creating four random variables for the four value to display.
+
 
   const item1 = Math.floor(Math.random() * data.length);
   const item2 = Math.floor(Math.random() * data.length);

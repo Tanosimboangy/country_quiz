@@ -12,7 +12,7 @@ function Displaycontent({
     data,
     collectionItems,
     item1,
-    setCount, }) {    
+    setCount, }) {
 
     return (
         <div>

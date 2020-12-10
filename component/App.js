@@ -21,6 +21,10 @@ function App() {
         fetchingData();
     }, [])
 
+    if (data.length = 0) {
+        fetchingData();
+    }
+
     // Creating four random variables for the four value to display.
     const item1 = Math.floor(Math.random() * data.length)
     const item2 = Math.floor(Math.random() * data.length)
