@@ -27,7 +27,15 @@ function App() {
     const item3 = Math.floor(Math.random() * data.length)
     const item4 = Math.floor(Math.random() * data.length)
 
-    if ((item1 === item2) || (item1 === item4) || (item2 === item3) || (item3 === item4) || (item1 === item3)) {
+    if (
+        !data.length ||
+        item1 === item2 ||
+        item1 === item3 ||
+        item1 === item4 ||
+        item2 === item3 ||
+        item2 === item4 ||
+        item3 === item4
+    ) {
         return null
     }
 
@@ -56,13 +64,7 @@ function App() {
                         />
                     </Route>
                     <Route path="/restart">
-                        <div className="container">
-                            <Restart
-                                count={count}
-                                setCount={setCount}
-                                fetchingData={fetchingData}
-                            />
-                        </div>
+                        <div className="container"><Restart count={count} setCount={setCount} fetchingData={fetchingData} /></div>
                     </Route>
                 </Switch>
             </ Router>

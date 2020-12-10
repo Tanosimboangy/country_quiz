@@ -33958,7 +33958,7 @@ function ButtonToNext({
 
 var _default = ButtonToNext;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"component/Displaycontent.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"component/Questions.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33969,6 +33969,46 @@ exports.default = void 0;
 var _react = _interopRequireDefault(require("react"));
 
 var _undraw_adventure = _interopRequireDefault(require("../img/undraw_adventure.svg"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Questions({
+  data,
+  item1,
+  fetchingData
+}) {
+  // A variable that randomise the question displayed.
+  const MathRandomQuestions = Math.floor(Math.random() * 2); // if ((!data[item1].capital) || (!data[item1].flag)) {
+  //     fetchingData()
+  // }
+
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
+    className: "undraw_adventure",
+    src: _undraw_adventure.default,
+    alt: "this is an undraw adventure"
+  }), MathRandomQuestions === 3 ? /*#__PURE__*/_react.default.createElement("h2", {
+    className: "capitale_question"
+  }, data[item1].capital && data[item1].capital, " is the capital of?") : /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: data[item1].flag,
+    className: "flag"
+  }), /*#__PURE__*/_react.default.createElement("h2", {
+    className: "flag_question"
+  }, "Which country does this flag belong to?")));
+}
+
+var _default = Questions;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","../img/undraw_adventure.svg":"img/undraw_adventure.svg"}],"component/Displaycontent.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _Questions = _interopRequireDefault(require("./Questions"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -33985,27 +34025,13 @@ function Displaycontent({
   item1,
   setCount
 }) {
-  // A variable that randomise the question displayed.
-  const MathRandomQuestions = Math.floor(Math.random() * 3);
-
-  if (!data[item1].capital || !data[item1].flag) {
-    fetchingData();
-  }
-
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
     className: "container"
-  }, /*#__PURE__*/_react.default.createElement("img", {
-    className: "undraw_adventure",
-    src: _undraw_adventure.default,
-    alt: "this is an undraw adventure"
-  }), MathRandomQuestions === 0 ? /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
-    src: data[item1].flag,
-    className: "flag"
-  }), /*#__PURE__*/_react.default.createElement("h2", {
-    className: "flag_question"
-  }, "Which country does this flag belong to?")) : /*#__PURE__*/_react.default.createElement("h2", {
-    className: "capitale_question"
-  }, data[item1].capital && data[item1].capital, " is the capital of?"), collectionItems.map(map => {
+  }, /*#__PURE__*/_react.default.createElement(_Questions.default, {
+    data: data,
+    item1: item1,
+    fetchingData: fetchingData
+  }), collectionItems.map(map => {
     return /*#__PURE__*/_react.default.createElement("div", {
       key: data[map].name,
       className: "button_container"
@@ -34027,7 +34053,7 @@ function Displaycontent({
 
 var _default = Displaycontent;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../img/undraw_adventure.svg":"img/undraw_adventure.svg"}],"component/Display.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./Questions":"component/Questions.js"}],"component/Display.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34055,11 +34081,9 @@ function Display({
   count,
   setCount
 }) {
-  // State for checking whether the user's answer is correct or not.
-  const [correct, setCorrect] = (0, _react.useState)(false); // State for checking whether the user has anwered or not.
-
-  const [answered, setAnswered] = (0, _react.useState)(false); // Function for setting the condition whether the user has answered or not yet.
-  // Function for setting the condition whether the answer is correct or incorrect.
+  // States for checking whether the user's answer is correct or not and for checking whether the user has anwered or not..
+  const [correct, setCorrect] = (0, _react.useState)(false);
+  const [answered, setAnswered] = (0, _react.useState)(false); // Function for setting the condition whether the user has answered or not yet for setting the condition whether the answer is correct or incorrect.
 
   function handleClickButton(e) {
     setAnswered(true);
@@ -34069,7 +34093,7 @@ function Display({
       e.target.classList.add("true_answer");
       setCorrect(true);
     } else if (e.target.dataset.value !== data[item1].name) {
-      // If the condition is true, add this "responded" class and set this setCorrect function into false.
+      // If this condition is true, add this "responded" class and set this setCorrect function into false.
       e.target.classList.add("false_answer");
       setCorrect(false); // Finding the correct answer so that I can grab the button.
 
@@ -34147,7 +34171,7 @@ function App() {
   const item3 = Math.floor(Math.random() * data.length);
   const item4 = Math.floor(Math.random() * data.length);
 
-  if (item1 === item2 || item1 === item4 || item2 === item3 || item3 === item4 || item1 === item3) {
+  if (!data.length || item1 === item2 || item1 === item3 || item1 === item4 || item2 === item3 || item2 === item4 || item3 === item4) {
     return null;
   } // Grouping all of the items.
 
@@ -34224,7 +34248,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60708" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52583" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

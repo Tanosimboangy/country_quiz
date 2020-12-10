@@ -36,7 +36,7 @@ Template for your readme :
 
 ## My experience:
 - Frankly, I had a lot of struggles accomplishing this project. However, It went well.
-Firstly, I grasped the use of Browserslist in the dependency, because I have trouble with that. This is because while I did not use it, I could not fetch the data, I gave me an error, but as soon as I inseted it in the dependency, it's done.
+Firstly, I grasped the use of Browserslist in the dependency, because I have trouble with that. This is because while I did not use it, I could not fetch the data, It gave me an error, but as soon as I inserted it in the dependency, it's done.
 
 - Something I have never used before but I applied in this project is importing an image. Import the image as if you are to import a component so that you can use that filename inside of the source
 

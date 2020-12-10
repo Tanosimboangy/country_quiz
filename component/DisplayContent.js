@@ -1,5 +1,5 @@
 import React from "react";
-import undraw_adventure from "../img/undraw_adventure.svg";
+import Questions from "./Questions";
 
 function Displaycontent({
     correct,
@@ -12,26 +12,16 @@ function Displaycontent({
     data,
     collectionItems,
     item1,
-    setCount, }) {
-
-    // A variable that randomise the question displayed.
-    const MathRandomQuestions = Math.floor(Math.random() * 3);
-    if ((!data[item1].capital) || (!data[item1].flag)) {
-        fetchingData()
-    }
+    setCount, }) {    
 
     return (
         <div>
             <div className="container">
-                <img className="undraw_adventure" src={undraw_adventure} alt="this is an undraw adventure" />
-                {MathRandomQuestions === 0  
-                    ? (<div>
-                        <img src={data[item1].flag} className="flag" />
-                        <h2 className="flag_question">Which country does this flag belong to?</h2>
-                    </div>)
-                    : 
-                    <h2 className="capitale_question">{data[item1].capital && data[item1].capital} is the capital of?</h2>
-                }
+                <Questions
+                    data={data}
+                    item1={item1}
+                    fetchingData={fetchingData}
+                />
                 {collectionItems.map(map => {
                     return (
                         <div
