@@ -1,6 +1,6 @@
 # Country Quiz
 
-### I have built this for anyone who is is intersted in learning while having fun the names of all the countries around the world. If you want to challenge yourself and test your knowledge about the names, the capitals and the flags of the countries around the world.
+### I have built this for anyone who is is intersted in learning while having fun the names of all the countries around the world. If you want to challenge yourself and extend your knowledge abouot the world, this is the rigth path for you to take.
 
 ### You can follow the brief description about this project, in order to know about what it does, how it works, and how to use it.
 
