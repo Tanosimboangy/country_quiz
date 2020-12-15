@@ -1,6 +1,6 @@
 # Country Quiz
 
-### I have built this for anyone who is is intersted in learning while having fun the names of all the countries around the world. If you want to challenge yourself and extend your knowledge abouot the world, this is the rigth path for you to take.
+### I have built this for anyone who is is intersted in learning while having fun to know all of the names of the countries around the world. If you want to challenge yourself and extend your knowledge about the world, this is the rigth path for you to take.
 
 ### You can follow the brief description about this project, in order to know about what it does, how it works, and how to use it.
 
@@ -33,9 +33,9 @@
 
 # *My experience:*
 
- - Despite of the fact that I encountered a lot of struggles while creating this app, I am very proud that I handle it.
+ - Despite of the fact that I encountered a lot of struggles while creating this app, I am very proud that I could handle it.
 
- - Firstly, I fetched all of the data through this API [https://restcountries.eu/rest/v2/all](https://restcountries.eu/rest/v2/all). At first, I had a problem with my dependecy, because I did not have the browserslist in there but as soon as I implemented this in my dependency it worked.
+ - Firstly, I fetched all of the data through this API [https://restcountries.eu/rest/v2/all](https://restcountries.eu/rest/v2/all). At first, I had a problem with my dependecy, because I did not have the browserslist in there, but as soon as I implemented this "browserslist" in my dependency it worked.
 
 - Something I have never used before but I applied in this project is importing an image. Import the image as if you are to import a component so that you can use that filename inside of the source. This is quite interesting because it helps you to maintain your code clean and easily to understand.
 
