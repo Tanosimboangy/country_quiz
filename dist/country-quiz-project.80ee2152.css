@@ -9,7 +9,7 @@
 body {
   margin: 0;
   padding: 16px;
-  padding-top: 40px;
+  padding-top: 20px;
   max-width: 100%;
   background-size: cover;
   background-position: 50% 50%;
@@ -32,11 +32,11 @@ body #root .principal_container h1 {
 body #root .principal_container .container {
   margin: auto;
   max-width: 370px;
-  padding-top: 32px;
+  padding-top: 20px;
   padding-left: 20px;
   padding-right: 20px;
   border-radius: 12px;
-  padding-bottom: 32px;
+  padding-bottom: 20px;
   background-color: white;
   position: relative;
 }
@@ -44,10 +44,12 @@ body #root .principal_container .container .undraw_adventure {
   position: absolute;
   top: -62px;
   right: 1px;
-  width: 30%;
+  width: 120px;
+  height: auto;
 }
-body #root .principal_container .container img {
-  width: 84px;
+body #root .principal_container .container .flag {
+  width: 70px;
+  height: 50px;
 }
 body #root .principal_container .container h2 {
   margin: 0;

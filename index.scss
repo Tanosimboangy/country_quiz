@@ -1,20 +1,17 @@
 @font-face {
     font-family: "Poppins_bold";
-    src: local(Poppins_bold),
-      url(./Fonts/Poppins-Bold.woff2) format("woff2"),
-      url(./Fonts/Poppins-Bold.woff) format("woff"),
+    src: local(Poppins_bold), url(./Fonts/Poppins-Bold.woff2) format("woff2"), url(./Fonts/Poppins-Bold.woff) format("woff"),
 }
+
 @font-face {
     font-family: "Poppins_Regular";
-    src: local(Poppins_Regular),
-      url(./Fonts/Poppins-Regular.woff2) format("woff2"),
-      url(./Fonts/Poppins-Regular.woff) format("woff"),
+    src: local(Poppins_Regular), url(./Fonts/Poppins-Regular.woff2) format("woff2"), url(./Fonts/Poppins-Regular.woff) format("woff"),
 }
 
 body {
     margin: 0;
     padding: 16px;
-    padding-top: 40px;
+    padding-top: 20px;
     max-width: 100%;
     background-size: cover;
     background-position: 50% 50%;
@@ -38,21 +35,23 @@ body {
             .container {
                 margin: auto;
                 max-width: 370px;
-                padding-top: 32px;
+                padding-top: 20px;
                 padding-left: 20px;
                 padding-right: 20px;
                 border-radius: 12px;
-                padding-bottom: 32px;
+                padding-bottom: 20px;
                 background-color: white;
                 position: relative;
                 .undraw_adventure {
                     position: absolute;
                     top: -62px;
                     right: 1px;
-                    width: 30%;
+                    width: 120px;
+                    height: auto;
                 }
-                img {
-                    width: 84px;
+                .flag {
+                    width: 70px;
+                    height: 50px;
                 }
                 h2 {
                     margin: 0;
@@ -88,8 +87,8 @@ body {
                         border-radius: 12px;
                         margin-bottom: 10px;
                         box-sizing: border-box;
-                        color: rgba(96,102,208,.8);
-                        border: 2px solid rgba(96,102,208,.7);
+                        color: rgba(96, 102, 208, .8);
+                        border: 2px solid rgba(96, 102, 208, .7);
                         font-family: "Poppins_Regular";
                     }
                     .buttons:hover {
@@ -172,7 +171,7 @@ body {
                 padding: 15px 30px;
                 border-radius: 12px;
                 background: #f9a826;
-                box-shadow: 0 2px 4px rgba(252,168,47,.4);
+                box-shadow: 0 2px 4px rgba(252, 168, 47, .4);
                 font-family: "Poppins_bold";
                 font-weight: bold;
                 font-size: 18px;
