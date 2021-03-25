@@ -1,10 +1,10 @@
 # Country Quiz
 
-### I have built this for anyone who is is intersted in learning while having fun to know all of the names of the countries around the world. If you want to challenge yourself and extend your knowledge about the world, this is the rigth path for you to take.
+### I have built this for anyone who is intersted in learning while having fun to know all of the names of the countries around the world. If you want to challenge yourself and extend your knowledge about the world, this is the rigth path for you to take.
 
 ### You can follow the brief description about this project, in order to know about what it does, how it works, and how to use it.
 
-### Please have a great while playing this game. This is the link to the netlify to play it:  
+### Please have a great time while playing this game. This is the link to the netlify to play it:  
 ## **https://country-quiz-project.netlify.app/**
 
 <h1 align="center">Country Quiz Project</h1>

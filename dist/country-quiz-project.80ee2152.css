@@ -8,8 +8,10 @@
 }
 body {
   margin: 0;
-  padding: 16px;
-  padding-top: 20px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 10px;
+  padding-top: 10px;
   max-width: 100%;
   background-size: cover;
   background-position: 50% 50%;
@@ -21,13 +23,21 @@ body #root .principal_container h1 {
   max-width: 370px;
   max-width: 400px;
   text-align: left;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   font-family: "Poppins_bold";
   font-style: normal;
   font-weight: bold;
   font-size: 36px;
   line-height: 54px;
   color: #F2F2F2;
+  text-transform: uppercase;
+}
+@media (max-width: 440px) {
+  body #root .principal_container h1 {
+    max-width: 200px;
+    margin-right: auto;
+    margin-left: 0;
+  }
 }
 body #root .principal_container .container {
   margin: auto;
@@ -48,8 +58,9 @@ body #root .principal_container .container .undraw_adventure {
   height: auto;
 }
 body #root .principal_container .container .flag {
-  width: 70px;
-  height: 50px;
+  width: 84px;
+  height: 54px;
+  padding-top: 48px;
 }
 body #root .principal_container .container h2 {
   margin: 0;
@@ -64,12 +75,13 @@ body #root .principal_container .container h2 {
 }
 body #root .principal_container .container .flag_question {
   margin: 0;
-  padding: 10px 0;
   font-size: 24px;
   max-width: 100%;
   color: #2F527B;
   font-weight: bold;
   line-height: 36px;
+  padding-top: 28px;
+  padding-bottom: 32px;
 }
 body #root .principal_container .container .button_container .buttons {
   width: 100%;
@@ -87,6 +99,7 @@ body #root .principal_container .container .button_container .buttons {
   color: rgba(96, 102, 208, 0.8);
   border: 2px solid rgba(96, 102, 208, 0.7);
   font-family: "Poppins_Regular";
+  cursor: pointer;
 }
 body #root .principal_container .container .button_container .buttons:hover {
   color: white;
@@ -156,6 +169,7 @@ body #root .principal_container .container .restart .btn_tryAigain {
   border-radius: 12px;
   box-sizing: border-box;
   border: 2px solid #1d355d;
+  cursor: pointer;
 }
 body #root .principal_container .container .restart .btn_tryAigain:hover {
   background: #F9A826;
@@ -172,6 +186,7 @@ body #root .principal_container .btn_next {
   font-size: 18px;
   line-height: 27px;
   color: #FFFFFF;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=/country-quiz-project.80ee2152.css.map */
