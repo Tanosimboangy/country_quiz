@@ -11,7 +11,6 @@ function Restart({ fetchingData, count, setCount }) {
     }
     return (
         <div className="restart">
-            <img className="undraw_adventure" src={undraw_adventure} alt="this is an undraw adventure" />
             <img className="undraw_winners" src={undraw_winners} alt="this is an undraw winners" />
             <h2>Result</h2>
             <p>You got <b style={{color:"green"}}>{count}</b> correct answers</p>

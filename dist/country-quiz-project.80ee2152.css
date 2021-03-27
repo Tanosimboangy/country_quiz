@@ -19,9 +19,8 @@ body {
 }
 body #root .principal_container h1 {
   margin: 0;
+  max-width: 528px;
   margin: auto;
-  max-width: 370px;
-  max-width: 400px;
   text-align: left;
   padding-bottom: 10px;
   font-family: "Poppins_bold";
@@ -41,26 +40,27 @@ body #root .principal_container h1 {
 }
 body #root .principal_container .container {
   margin: auto;
-  max-width: 370px;
-  padding-top: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
+  max-width: 464px;
+  padding-top: 68px;
+  padding-left: 32px;
+  padding-right: 32px;
   border-radius: 12px;
-  padding-bottom: 20px;
+  padding-bottom: 35px;
   background-color: white;
   position: relative;
 }
 body #root .principal_container .container .undraw_adventure {
   position: absolute;
-  top: -62px;
-  right: 1px;
-  width: 120px;
+  top: -63px;
+  right: 0px;
+  width: 140px;
   height: auto;
 }
 body #root .principal_container .container .flag {
   width: 84px;
   height: 54px;
-  padding-top: 48px;
+  filter: drop-shadow(0px 4px 24px rgba(0, 0, 0, 0.1));
+  border-radius: 4px;
 }
 body #root .principal_container .container h2 {
   margin: 0;
@@ -89,12 +89,12 @@ body #root .principal_container .container .button_container .buttons {
   font-size: 18px;
   font-weight: 500;
   line-height: 27px;
-  padding: 12px 10px;
+  padding: 14px;
   position: relative;
   background: #fff;
   text-align: center;
   border-radius: 12px;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
   box-sizing: border-box;
   color: rgba(96, 102, 208, 0.8);
   border: 2px solid rgba(96, 102, 208, 0.7);
@@ -142,24 +142,27 @@ body #root .principal_container .container .restart .undraw_winners {
   width: 238px;
 }
 body #root .principal_container .container .restart h2 {
-  padding-top: 20px;
+  padding-top: 72px;
+  padding-bottom: 0;
   font-family: "Poppins_bold";
   font-weight: bold;
-  font-size: 32px;
+  font-size: 48px;
   line-height: 64px;
   color: #1D355D;
 }
 body #root .principal_container .container .restart p {
+  font-family: "Poppins_Regular";
+  font-style: normal;
+  font-weight: normal;
   font-size: 24px;
   color: #2f527b;
   padding-top: 30px;
   line-height: 36px;
-  padding-bottom: 20px;
+  padding-bottom: 71px;
+  padding-top: 0;
   margin: 0;
 }
 body #root .principal_container .container .restart .btn_tryAigain {
-  width: 209px;
-  height: 62px;
   outline: none;
   font-size: 18px;
   font-weight: 600;
@@ -170,6 +173,7 @@ body #root .principal_container .container .restart .btn_tryAigain {
   box-sizing: border-box;
   border: 2px solid #1d355d;
   cursor: pointer;
+  padding: 17px 63px;
 }
 body #root .principal_container .container .restart .btn_tryAigain:hover {
   background: #F9A826;
@@ -187,6 +191,13 @@ body #root .principal_container .btn_next {
   line-height: 27px;
   color: #FFFFFF;
   cursor: pointer;
+}
+
+@media (min-width: 720px) {
+  body {
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
 
 /*# sourceMappingURL=/country-quiz-project.80ee2152.css.map */

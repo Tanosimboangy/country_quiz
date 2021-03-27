@@ -33889,10 +33889,6 @@ function Restart({
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "restart"
   }, /*#__PURE__*/_react.default.createElement("img", {
-    className: "undraw_adventure",
-    src: _undraw_adventure.default,
-    alt: "this is an undraw adventure"
-  }), /*#__PURE__*/_react.default.createElement("img", {
     className: "undraw_winners",
     src: _undraw_winners.default,
     alt: "this is an undraw winners"
@@ -34250,7 +34246,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63015" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62837" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
