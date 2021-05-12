@@ -1,0 +1,63 @@
+var helpers = require("../../../../../../usr/local/share/.config/yarn/global/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require("react");
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _reactRouterDom = require("react-router-dom");
+  var _jsxFileName = "/home/student/Coding/projects/country-quiz/component/ButtonToNext.js";
+  function ButtonToNext({fetchingData, correct, setCount, setAnswered}) {
+    function handleClickNext() {
+      // Rerun the fetching function again
+      fetchingData();
+      // Running the increment counter
+      setCount(prev => prev + 1);
+      // Setting the setAnswered into fasle so the start button does not show untill the user clicks on of the four buttons
+      setAnswered(false);
+    }
+    // Rendering either of these button according to the answer
+    return (
+      /*#__PURE__*/_reactDefault.default.createElement(_reactDefault.default.Fragment, null, correct ? /*#__PURE__*/
+      // If the user clicks the right button with the right answer, display this first next button
+      _reactDefault.default.createElement("button", {
+        className: "btn_next",
+        onClick: handleClickNext,
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 18,
+          columnNumber: 17
+        }
+      }, "Next") : /*#__PURE__*/
+      // However if the user clicks incorrect button, display this second next button
+      _reactDefault.default.createElement(_reactRouterDom.Link, {
+        to: "/restart",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 21,
+          columnNumber: 17
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("button", {
+        className: "btn_next",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 22,
+          columnNumber: 21
+        }
+      }, "Next")))
+    );
+  }
+  _c = ButtonToNext;
+  exports.default = ButtonToNext;
+  var _c;
+  $RefreshReg$(_c, "ButtonToNext");
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
