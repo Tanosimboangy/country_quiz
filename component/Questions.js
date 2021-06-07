@@ -1,21 +1,19 @@
 import React from 'react'
-// import undraw_adventure from "../img/undraw_adventure.svg";
+import undraw_adventure from '../img/undraw_adventure.svg'
 
 function Questions({ data, item1, fetchingData }) {
   // A variable that randomise the question displayed.
-  const MathRandomQuestions = Math.floor(Math.random() * 2)
-  if (!data[item1].capital || !data[item1].flag) {
-    fetchingData()
-  }
+  const mathRandomQuestions = Math.floor(Math.random() * 2)
+
 
   return (
     <div>
       <img
         className='undraw_adventure'
-        src='../img/undraw_adventure.svg'
+        src={undraw_adventure}
         alt='this is an undraw adventure'
       />
-      {MathRandomQuestions === 3 ? (
+      {mathRandomQuestions === 1 ? (
         <h2 className='capitale_question'>
           {data[item1].capital && data[item1].capital} is the capital of?
         </h2>

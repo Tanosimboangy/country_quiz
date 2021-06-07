@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-// import undraw_adventure from "../img/undraw_adventure.svg";
-// import undraw_winners from '../img/undraw_winners.svg'
+import undraw_winners from '../img/undraw_winners.svg'
 
 function Restart({ fetchingData, count, setCount }) {
   // Function that reruns the fetchingData() function and setting the setCount() function back to zero.
@@ -13,7 +12,7 @@ function Restart({ fetchingData, count, setCount }) {
     <div className='restart'>
       <img
         className='undraw_winners'
-        src='../img/undraw_winners.svg'
+        src={undraw_winners}
         alt='this is an undraw winners'
       />
       <h2>Result</h2>
