@@ -18,7 +18,6 @@ function Quizz({
         </header>
       )}
       {number === 1 && <h3>{randomCountry.capital} is the the capital of </h3>}
-      {number === 2 && <h3>{randomCountry.demonym} are people from </h3>}
 
       <div className='answers'>
         <button

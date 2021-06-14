@@ -22,6 +22,7 @@
   "homepage": "https://github.com/Tanosimboangy/country-quiz#readme",
   "dependencies": {
     "@parcel/transformer-sass": "^2.0.0-beta.2",
+    "node-sass": "^6.0.0",
     "parcel-bundler": "^1.12.5",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
@@ -29,6 +30,6 @@
     "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
-    "sass": "^1.29.0"
+    "sass": "^1.34.1"
   }
 }

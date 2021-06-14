@@ -29591,7 +29591,7 @@ function Quizz({
     className: "container"
   }, number === 0 && /*#__PURE__*/_react.default.createElement("header", null, /*#__PURE__*/_react.default.createElement("img", {
     src: randomCountry.flag
-  }), /*#__PURE__*/_react.default.createElement("h3", null, "Which country does this flag belong to?")), number === 1 && /*#__PURE__*/_react.default.createElement("h3", null, randomCountry.capital, " is the the capital of "), number === 2 && /*#__PURE__*/_react.default.createElement("h3", null, randomCountry.demonym, " are people from "), /*#__PURE__*/_react.default.createElement("div", {
+  }), /*#__PURE__*/_react.default.createElement("h3", null, "Which country does this flag belong to?")), number === 1 && /*#__PURE__*/_react.default.createElement("h3", null, randomCountry.capital, " is the the capital of "), /*#__PURE__*/_react.default.createElement("div", {
     className: "answers"
   }, /*#__PURE__*/_react.default.createElement("button", {
     value: randomAnswerOption[0],
@@ -29762,7 +29762,7 @@ function App() {
   }
 
   function nextQuestion() {
-    setNumber(Math.floor(Math.random() * 3));
+    setNumber(Math.floor(Math.random() * 2));
 
     if (isAnswerShown) {
       getRandomCountry();
@@ -29844,7 +29844,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "41067" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43715" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

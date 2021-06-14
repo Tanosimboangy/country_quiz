@@ -87,7 +87,7 @@ function App() {
   }
 
   function nextQuestion() {
-    setNumber(Math.floor(Math.random() * 3))
+    setNumber(Math.floor(Math.random() * 2))
     if (isAnswerShown) {
       getRandomCountry()
       setIsNext(false)

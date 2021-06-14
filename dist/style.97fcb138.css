@@ -1,0 +1,110 @@
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 700;
+  font-style: normal;
+  src: local("Poppins Bold"), local("Poppins-Bold"), url("/poppins_700.b54987c1.woff2") format("woff2"), url("/poppins_700.cd3f7219.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 600;
+  font-style: normal;
+  src: local("Poppins SemiBold"), local("Poppins-SemiBold"), url("/poppins_600.4e2fa09a.woff2") format("woff2"), url("/poppins_600.cf7208a2.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 500;
+  font-style: normal;
+  src: local("Poppins Medium"), local("Poppins-Medium"), url("/poppins_500.6436e4ae.woff2") format("woff2"), url("/poppins_500.e424dc4b.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-style: normal;
+  src: local("Poppins Regular"), local("Poppins-Regular"), url("/poppins_400.ba99aad8.woff2") format("woff2"), url("/poppins_400.6ae39e59.woff") format("woff"); }
+
+body {
+  background-image: url("/background.59c06501.png");
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0; }
+  body a {
+    text-decoration: none; }
+  body h1,
+  body h2,
+  body h3,
+  body h4,
+  body h5,
+  body h6,
+  body p {
+    margin: 0; }
+  body ul {
+    padding: 0; }
+    body ul li {
+      list-style: none; }
+  body button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    object-fit: contain; }
+  body img {
+    max-width: 84px;
+    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 5px; }
+  body div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+  body .app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 464px;
+    margin: 0 auto;
+    padding-top: 25px; }
+    body .app-container h1 {
+      font-size: 36px;
+      color: #ffffff;
+      font-weight: 700;
+      line-height: 45px;
+      padding-bottom: 8px;
+      text-transform: uppercase; }
+    body .app-container .startBtn {
+      margin: auto;
+      font-size: 18px;
+      color: #1d355d;
+      font-weight: 600;
+      line-height: 27px;
+      padding: 1rem 2rem;
+      align-self: center;
+      border-radius: 12px;
+      background-color: #ffffff; }
+    body .app-container .container {
+      margin: auto;
+      max-width: 400px;
+      padding: 30px;
+      border-radius: 12px;
+      background-color: white;
+      position: relative;
+      display: flex;
+      flex-direction: column; }
+    body .app-container .container::before {
+      content: '';
+      width: 32%;
+      height: 24%;
+      position: absolute;
+      top: -13%;
+      left: 68%;
+      background-image: url("/undraw_adventure.be647353.svg");
+      background-position: right 100%;
+      background-repeat: no-repeat;
+      background-size: 100% 114%; }
+
+
+/*# sourceMappingURL=/style.97fcb138.css.map */

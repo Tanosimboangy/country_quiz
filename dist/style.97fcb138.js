@@ -184,12 +184,12 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"style.css":[function(require,module,exports) {
+},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"style.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./fonts/poppins_700.woff2":[["poppins_700.b54987c1.woff2","fonts/poppins_700.woff2"],"fonts/poppins_700.woff2"],"./fonts/poppins_700.woff":[["poppins_700.cd3f7219.woff","fonts/poppins_700.woff"],"fonts/poppins_700.woff"],"./fonts/poppins_600.woff2":[["poppins_600.4e2fa09a.woff2","fonts/poppins_600.woff2"],"fonts/poppins_600.woff2"],"./fonts/poppins_600.woff":[["poppins_600.cf7208a2.woff","fonts/poppins_600.woff"],"fonts/poppins_600.woff"],"./fonts/poppins_500.woff2":[["poppins_500.6436e4ae.woff2","fonts/poppins_500.woff2"],"fonts/poppins_500.woff2"],"./fonts/poppins_500.woff":[["poppins_500.e424dc4b.woff","fonts/poppins_500.woff"],"fonts/poppins_500.woff"],"./fonts/poppins_400.woff2":[["poppins_400.ba99aad8.woff2","fonts/poppins_400.woff2"],"fonts/poppins_400.woff2"],"./fonts/poppins_400.woff":[["poppins_400.6ae39e59.woff","fonts/poppins_400.woff"],"fonts/poppins_400.woff"],"./img/background.png":[["background.59c06501.png","img/background.png"],"img/background.png"],"./img/undraw_adventure.svg":[["undraw_adventure.be647353.svg","img/undraw_adventure.svg"],"img/undraw_adventure.svg"],"./img/undraw_winners.svg":[["undraw_winners.9c22d644.svg","img/undraw_winners.svg"],"img/undraw_winners.svg"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./fonts/poppins_700.woff2":[["poppins_700.b54987c1.woff2","fonts/poppins_700.woff2"],"fonts/poppins_700.woff2"],"./fonts/poppins_700.woff":[["poppins_700.cd3f7219.woff","fonts/poppins_700.woff"],"fonts/poppins_700.woff"],"./fonts/poppins_600.woff2":[["poppins_600.4e2fa09a.woff2","fonts/poppins_600.woff2"],"fonts/poppins_600.woff2"],"./fonts/poppins_600.woff":[["poppins_600.cf7208a2.woff","fonts/poppins_600.woff"],"fonts/poppins_600.woff"],"./fonts/poppins_500.woff2":[["poppins_500.6436e4ae.woff2","fonts/poppins_500.woff2"],"fonts/poppins_500.woff2"],"./fonts/poppins_500.woff":[["poppins_500.e424dc4b.woff","fonts/poppins_500.woff"],"fonts/poppins_500.woff"],"./fonts/poppins_400.woff2":[["poppins_400.ba99aad8.woff2","fonts/poppins_400.woff2"],"fonts/poppins_400.woff2"],"./fonts/poppins_400.woff":[["poppins_400.6ae39e59.woff","fonts/poppins_400.woff"],"fonts/poppins_400.woff"],"./img/background.png":[["background.59c06501.png","img/background.png"],"img/background.png"],"./img/undraw_adventure.svg":[["undraw_adventure.be647353.svg","img/undraw_adventure.svg"],"img/undraw_adventure.svg"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -217,7 +217,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "34247" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43715" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -394,4 +394,4 @@ function hmrAcceptRun(bundle, id) {
   }
 }
 },{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
-//# sourceMappingURL=/style.e308ff8e.js.map
+//# sourceMappingURL=/style.97fcb138.js.map
