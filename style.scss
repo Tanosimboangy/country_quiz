@@ -31,11 +31,13 @@
     url('./fonts/poppins_400.woff') format('woff');
 }
 body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
   background-image: url('./img/background.png');
+  background-position: 0 0;
   background-repeat: no-repeat;
+  background-size: 100% 100%;
   position: relative;
+  height: 720px;
+  margin: 0;
   a {
     text-decoration: none;
   }
@@ -59,230 +61,277 @@ body {
     outline: none;
     cursor: pointer;
   }
-  img {
-    max-width: 84px;
-    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
-  }
   #root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
     .container {
-      // max-width: 464px;
-      // margin: 0 auto;
-      width: 200px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      width: 100%;
+      max-width: 464px;
+      margin: 0 auto;
       .sub_container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        .title {
-          font-size: 36px;
-          color: #ffffff;
-          font-weight: 700;
-          padding-bottom: 8px;
-          text-transform: uppercase;
-          line-height: 45px;
-          align-self: center;
+        .quiz_wrapper {
+          .title {
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 700;
+            font-family: 'Poppins';
+            line-height: 54px;
+            padding-top: 40px;
+            color: #f2f2f2;
+            text-transform: uppercase;
+            padding-bottom: 8px;
+          }
+          .wrapper {
+            margin: auto;
+            max-width: 400px;
+            padding: 30px;
+            border-radius: 12px;
+            background-color: white;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            .header {
+              .header_image {
+                max-width: 84px;
+                height: 54px;
+                filter: drop-shadow(0px 4px 24px rgba(0, 0, 0, 0.1));
+                border-radius: 4px;
+                box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.3);
+                border-radius: 5px;
+              }
+              .header_text {
+                font-family: 'Poppins';
+                font-style: normal;
+                font-weight: bold;
+                font-size: 24px;
+                line-height: 30px;
+                margin-top: 20px;
+                color: #1d355d;
+                margin-bottom: 20px;
+              }
+            }
+            .random_capital--question {
+              font-family: 'Poppins';
+              font-style: normal;
+              font-weight: bold;
+              font-size: 24px;
+              line-height: 36px;
+              color: #2f527b;
+              padding-top: 30px;
+              padding-bottom: 40px;
+            }
+            .answers {
+              display: flex;
+              flex-direction: column;
+              row-gap: 1rem;
+            }
+            .answers button:first-of-type::before {
+              content: 'A';
+              width: 2rem;
+              height: 2rem;
+              left: 55px;
+              position: absolute;
+            }
+            .answers button:nth-of-type(2)::before {
+              content: 'B';
+              width: 2rem;
+              height: 2rem;
+              left: 55px;
+              position: absolute;
+            }
+            .answers button:nth-of-type(3)::before {
+              content: 'C';
+              width: 2rem;
+              height: 2rem;
+              left: 55px;
+              position: absolute;
+            }
+            .answers button:nth-of-type(4)::before {
+              content: 'D';
+              width: 2rem;
+              height: 2rem;
+              left: 55px;
+              position: absolute;
+            }
+            .answers button {
+              padding: 1rem;
+              padding-left: 22%;
+              background-color: transparent;
+              border: 2px solid #6066d0;
+              color: #6066d0;
+              border-radius: 5px;
+              min-height: 56px;
+              text-align: left;
+              font-size: 18px;
+              font-weight: 500;
+            }
+            .nextBtn {
+              background-color: #f9a826;
+              color: #ffffff;
+              border: none;
+              padding: 16px 36px;
+              margin-top: 1rem;
+              border-radius: 12px;
+              align-self: flex-end;
+              font-weight: 700;
+              font-size: 18px;
+              line-height: 27px;
+            }
+          }
+          .wrapper::before {
+            content: '';
+            width: 32%;
+            height: 44%;
+            position: absolute;
+            top: -27%;
+            left: 68%;
+            background-image: url('./img/undraw_adventure.svg');
+            background-position: right 100%;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+          }
+          .result_container {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            border-radius: 24px;
+            .result_image {
+              padding-top: 24px;
+              padding-bottom: 60px;
+              max-width: 238px;
+              height: auto;
+              width: 100%;
+            }
+            .result_title {
+              font-family: 'Poppins';
+              font-style: normal;
+              font-weight: bold;
+              font-size: 40px;
+              line-height: 60px;
+              color: #1d355d;
+            }
+            .result_text {
+              font-family: 'Poppins';
+              font-style: normal;
+              font-weight: normal;
+              font-size: 18px;
+              line-height: 27px;
+              color: #1d355d;
+              padding-bottom: 60px;
+              span {
+                font-family: 'Poppins';
+                font-style: normal;
+                font-weight: bold;
+                font-size: 36px;
+                line-height: 44px;
+                color: green;
+              }
+            }
+            .tryAgainBtn {
+              border: 2px solid #1d355d;
+              box-sizing: border-box;
+              border-radius: 12px;
+              font-family: 'Poppins';
+              font-style: normal;
+              font-weight: 600;
+              font-size: 18px;
+              line-height: 27px;
+              color: #1d355d;
+              background-color: white;
+              padding: 5% 17%;
+            }
+            .tryAgainBtn:hover {
+              background-color: #f9a826;
+              color: #ffffff;
+              border: 2px solid #f9a826;
+            }
+          }
         }
-        .startBtn {
-          font-size: 18px;
-          color: #1d355d;
-          font-weight: 600;
-          line-height: 27px;
-          padding: 1rem 2rem;
-          align-self: center;
-          border-radius: 12px;
-          background-color: #ffffff;
+        .start_container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          max-width: 464px;
+          margin: 0 auto;
+          .title_for_startBtn {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 54px;
+            text-transform: uppercase;
+            padding-bottom: 8px;
+            color: #f2f2f2;
+            align-self: center;
+            padding-top: 230px;
+          }
+          .startBtn {
+            font-size: 18px;
+            color: #1d355d;
+            font-weight: 600;
+            line-height: 27px;
+            padding: 1rem 2rem;
+            align-self: center;
+            border-radius: 12px;
+            background-color: #ffffff;
+          }
         }
       }
     }
   }
 }
 
-// body {
-//   #root {
-//     .container {
-//       .wrapper {
-//         margin: auto;
-//         max-width: 400px;
-//         padding: 30px;
-//         border-radius: 12px;
-//         background-color: white;
-//         position: relative;
-//         display: flex;
-//         flex-direction: column;
-//         .wrapper_text {
-//           color: #2f527b;
-//           font-weight: 700;
-//           font-size: 27px;
-//           line-height: 32px;
-//           margin-top: 16px;
-//           margin-bottom: 16px;
-//         }
-//       }
-//       .wrapper::before {
-//         content: '';
-//         width: 32%;
-//         height: 24%;
-//         position: absolute;
-//         top: -13%;
-//         left: 68%;
-//         background-image: url('./img/undraw_adventure.svg');
-//         background-position: right 100%;
-//         background-repeat: no-repeat;
-//         background-size: 100% 114%;
-//       }
-//     }
-//   }
-// }
-
-// // body {
-
-// // .answers {
-// //   display: flex;
-// //   flex-direction: column;
-// //   row-gap: 1rem;
-// // }
-
-// // .answers button {
-// //   padding: 1rem;
-// //   padding-left: 22%;
-// //   background-color: transparent;
-// //   border: 2px solid #6066d0;
-// //   color: #6066d0;
-// //   border-radius: 5px;
-// //   min-height: 56px;
-// //   text-align: left;
-// //   font-size: 18px;
-// //   font-weight: 500;
-// // }
-// // @media (max-width: 320px) {
-// //   .answers button {
-// //     padding-left: 53px;
-// //   }
-// // }
-
-// // .answers button:first-of-type::before {
-// //   content: 'A';
-// //   width: 2rem;
-// //   height: 2rem;
-// //   left: 55px;
-// //   position: absolute;
-// // }
-
-// // .answers button:nth-of-type(2)::before {
-// //   content: 'B';
-// //   width: 2rem;
-// //   height: 2rem;
-// //   left: 55px;
-// //   position: absolute;
-// // }
-
-// // .answers button:nth-of-type(3)::before {
-// //   content: 'C';
-// //   width: 2rem;
-// //   height: 2rem;
-// //   left: 55px;
-// //   position: absolute;
-// // }
-
-// // .answers button:nth-of-type(4)::before {
-// //   content: 'D';
-// //   width: 2rem;
-// //   height: 2rem;
-// //   left: 55px;
-// //   position: absolute;
-// // }
-
-// // p {
-// //   color: #1d355d;
-// // }
-
-// // .nextBtn {
-// //   background-color: #f9a826;
-// //   color: #ffffff;
-// //   border: none;
-// //   padding: 16px 36px;
-// //   margin-top: 1rem;
-// //   border-radius: 12px;
-// //   align-self: flex-end;
-// //   font-weight: 700;
-// //   font-size: 18px;
-// //   line-height: 27px;
-// // }
-
-// // .tryAgainBtn {
-// //   max-width: 209px;
-// //   max-height: 62px;
-// //   background-color: transparent;
-// //   color: #1d355d;
-// //   padding: 18px 60px;
-// //   border: 2px solid #1d355d;
-// //   border-radius: 5px;
-// //   font-weight: 600;
-// //   font-size: 18px;
-// //   line-height: 27px;
-// // }
-
-// // .tryAgainBtn:hover {
-// //   background-color: #f9a826;
-// //   color: #ffffff;
-// //   border: #ffffff;
-// // }
-
-// // .result {
-// //   background-image: url('./img/undraw_winners.svg');
-// //   background-position: center 15%;
-// //   background-repeat: no-repeat;
-// //   background-size: 238px 128px;
-// //   padding-top: 250px;
-// //   display: flex;
-// //   flex-direction: column;
-// //   align-items: center;
-// //   justify-content: center;
-// // }
-
-// // .result::before {
-// //   content: '';
-// //   background-image: none;
-// // }
-
-// // h2 {
-// //   font-size: 48px;
-// //   font-weight: 700;
-// //   color: #1d355d;
-// //   line-height: 72px;
-// // }
-// // @media (max-width: 290px) {
-// //   h2 {
-// //     font-size: 30px;
-// //     font-weight: 600;
-// //     line-height: 50px;
-// //   }
-// // }
-
-// // b {
-// //   color: #60bf88;
-// //   font-weight: 800;
-// //   font-size: 40px;
-// // }
-
-// // .result p {
-// //   font-weight: 400;
-// //   font-size: 26px;
-// //   line-height: 44px;
-// //   padding-bottom: 71px;
-// // }
-// // @media (max-width: 290px) {
-// //   .result p {
-// //     font-size: 20px;
-// //     line-height: 32px;
-// //   }
-// // }
-
-// // button {
-// //   outline: none;
-// //   cursor: pointer;
-// // }
+@media (max-width: 500px) {
+  body {
+    #root {
+      .container {
+        .sub_container {
+          .quiz_wrapper {
+            .title {
+              margin: 0 16px 0 16px;
+            }
+            .wrapper {
+              margin: 16px;
+              .header {
+                .header_image {
+                }
+                .header_text {
+                }
+              }
+              .random_capital--question {
+              }
+              .answers {
+              }
+              .answers button:first-of-type::before {
+              }
+              .answers button:nth-of-type(2)::before {
+              }
+              .answers button:nth-of-type(3)::before {
+              }
+              .answers button:nth-of-type(4)::before {
+              }
+              .answers button {
+              }
+              .nextBtn {
+              }
+            }
+            .wrapper::before {
+            }
+          }
+          .start_container {
+            .title_for_startBtn {
+            }
+            .startBtn {
+            }
+          }
+        }
+      }
+    }
+  }
+}

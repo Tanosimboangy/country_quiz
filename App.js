@@ -131,8 +131,8 @@ function App() {
             )}
           </div>
         ) : (
-          <div>
-            <h1 className='title' ref={title}>
+          <div className='start_container'>
+            <h1 className='title_for_startBtn' ref={title}>
               Country Quiz
             </h1>
             <button onClick={getRandomCountry} className='startBtn'>

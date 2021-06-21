@@ -19,7 +19,11 @@ function Quizz({
           </h3>
         </header>
       )}
-      {number === 1 && <h3>{randomCountry.capital} is the the capital of </h3>}
+      {number === 1 && (
+        <h3 className='random_capital--question'>
+          {randomCountry.capital} is the the capital of{' '}
+        </h3>
+      )}
 
       <div className='answers'>
         <button

@@ -29596,7 +29596,9 @@ function Quizz({
     src: randomCountry.flag
   }), /*#__PURE__*/_react.default.createElement("h3", {
     className: "header_text"
-  }, "Which country does this flag belong to?")), number === 1 && /*#__PURE__*/_react.default.createElement("h3", null, randomCountry.capital, " is the the capital of "), /*#__PURE__*/_react.default.createElement("div", {
+  }, "Which country does this flag belong to?")), number === 1 && /*#__PURE__*/_react.default.createElement("h3", {
+    className: "random_capital--question"
+  }, randomCountry.capital, " is the the capital of", ' '), /*#__PURE__*/_react.default.createElement("div", {
     className: "answers"
   }, /*#__PURE__*/_react.default.createElement("button", {
     value: randomAnswerOption[0],
@@ -29626,7 +29628,9 @@ function Quizz({
 
 var _default = Quizz;
 exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"component/results.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js"}],"img/undraw_winners.svg":[function(require,module,exports) {
+module.exports = "/undraw_winners.9c22d644.svg";
+},{}],"component/results.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29635,6 +29639,8 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
+
+var _undraw_winners = _interopRequireDefault(require("../img/undraw_winners.svg"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29653,8 +29659,15 @@ function Result({
   }
 
   return /*#__PURE__*/_react.default.createElement("div", {
-    className: "container result"
-  }, /*#__PURE__*/_react.default.createElement("h2", null, "Results"), /*#__PURE__*/_react.default.createElement("p", null, "You got ", /*#__PURE__*/_react.default.createElement("b", null, score), " correct answers"), /*#__PURE__*/_react.default.createElement("button", {
+    className: "result_container"
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    className: "result_image",
+    src: _undraw_winners.default
+  }), /*#__PURE__*/_react.default.createElement("h2", {
+    className: "result_title"
+  }, "Results"), /*#__PURE__*/_react.default.createElement("p", {
+    className: "result_text"
+  }, "You got ", /*#__PURE__*/_react.default.createElement("span", null, score), " correct answers"), /*#__PURE__*/_react.default.createElement("button", {
     className: "tryAgainBtn",
     onClick: handleClickBtn
   }, "Try again"));
@@ -29662,7 +29675,7 @@ function Result({
 
 var _default = Result;
 exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"img/check_circle.svg":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../img/undraw_winners.svg":"img/undraw_winners.svg"}],"img/check_circle.svg":[function(require,module,exports) {
 module.exports = "/check_circle.4c17ec5b.svg";
 },{}],"img/cancel.svg":[function(require,module,exports) {
 module.exports = "/cancel.62487108.svg";
@@ -29806,8 +29819,10 @@ function App() {
     handleClick: handleClick,
     rightAnswer: correctAnswer,
     number: number
-  })) : /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", {
-    className: "title",
+  })) : /*#__PURE__*/_react.default.createElement("div", {
+    className: "start_container"
+  }, /*#__PURE__*/_react.default.createElement("h1", {
+    className: "title_for_startBtn",
     ref: title
   }, "Country Quiz"), /*#__PURE__*/_react.default.createElement("button", {
     onClick: getRandomCountry,
@@ -29857,7 +29872,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39623" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37455" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
