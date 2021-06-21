@@ -101,38 +101,46 @@ function App() {
   }
 
   return (
-    <div className='app-container'>
-      <h1 ref={title}>Country Quiz</h1>
-
-      {IsStart ? (
-        <div>
-          {IsResult ? (
-            <Result
-              score={score}
-              setIsResult={setIsResult}
-              randomCountry={randomCountry}
-              randomAnswerOption={randomAnswerOption}
-              getRandomCountry={getRandomCountry}
-              setScore={setScore}
-              setIsNext={setIsNext}
-            />
-          ) : (
-            <Quizz
-              randomCountry={randomCountry}
-              randomAnswerOption={randomAnswerOption}
-              IsNext={IsNext}
-              nextQuestion={nextQuestion}
-              handleClick={handleClick}
-              rightAnswer={correctAnswer}
-              number={number}
-            />
-          )}
-        </div>
-      ) : (
-        <button onClick={getRandomCountry} className='startBtn'>
-          Start
-        </button>
-      )}
+    <div className='container'>
+      <div className='sub_container'>
+        {IsStart ? (
+          <div className='quiz_wrapper'>
+            <h1 className='title' ref={title}>
+              Country Quiz
+            </h1>
+            {IsResult ? (
+              <Result
+                score={score}
+                setIsResult={setIsResult}
+                randomCountry={randomCountry}
+                randomAnswerOption={randomAnswerOption}
+                getRandomCountry={getRandomCountry}
+                setScore={setScore}
+                setIsNext={setIsNext}
+              />
+            ) : (
+              <Quizz
+                randomCountry={randomCountry}
+                randomAnswerOption={randomAnswerOption}
+                IsNext={IsNext}
+                nextQuestion={nextQuestion}
+                handleClick={handleClick}
+                rightAnswer={correctAnswer}
+                number={number}
+              />
+            )}
+          </div>
+        ) : (
+          <div>
+            <h1 className='title' ref={title}>
+              Country Quiz
+            </h1>
+            <button onClick={getRandomCountry} className='startBtn'>
+              Start
+            </button>
+          </div>
+        )}
+      </div>
     </div>
   )
 }

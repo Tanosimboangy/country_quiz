@@ -29588,10 +29588,15 @@ function Quizz({
   number
 }) {
   return /*#__PURE__*/_react.default.createElement("div", {
-    className: "container"
-  }, number === 0 && /*#__PURE__*/_react.default.createElement("header", null, /*#__PURE__*/_react.default.createElement("img", {
+    className: "wrapper"
+  }, number === 0 && /*#__PURE__*/_react.default.createElement("header", {
+    className: "header"
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    className: "header_image",
     src: randomCountry.flag
-  }), /*#__PURE__*/_react.default.createElement("h3", null, "Which country does this flag belong to?")), number === 1 && /*#__PURE__*/_react.default.createElement("h3", null, randomCountry.capital, " is the the capital of "), /*#__PURE__*/_react.default.createElement("div", {
+  }), /*#__PURE__*/_react.default.createElement("h3", {
+    className: "header_text"
+  }, "Which country does this flag belong to?")), number === 1 && /*#__PURE__*/_react.default.createElement("h3", null, randomCountry.capital, " is the the capital of "), /*#__PURE__*/_react.default.createElement("div", {
     className: "answers"
   }, /*#__PURE__*/_react.default.createElement("button", {
     value: randomAnswerOption[0],
@@ -29777,10 +29782,15 @@ function App() {
   }
 
   return /*#__PURE__*/_react.default.createElement("div", {
-    className: "app-container"
+    className: "container"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "sub_container"
+  }, IsStart ? /*#__PURE__*/_react.default.createElement("div", {
+    className: "quiz_wrapper"
   }, /*#__PURE__*/_react.default.createElement("h1", {
+    className: "title",
     ref: title
-  }, "Country Quiz"), IsStart ? /*#__PURE__*/_react.default.createElement("div", null, IsResult ? /*#__PURE__*/_react.default.createElement(_results.default, {
+  }, "Country Quiz"), IsResult ? /*#__PURE__*/_react.default.createElement(_results.default, {
     score: score,
     setIsResult: setIsResult,
     randomCountry: randomCountry,
@@ -29796,10 +29806,13 @@ function App() {
     handleClick: handleClick,
     rightAnswer: correctAnswer,
     number: number
-  })) : /*#__PURE__*/_react.default.createElement("button", {
+  })) : /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", {
+    className: "title",
+    ref: title
+  }, "Country Quiz"), /*#__PURE__*/_react.default.createElement("button", {
     onClick: getRandomCountry,
     className: "startBtn"
-  }, "Start"));
+  }, "Start"))));
 }
 
 var _default = App;
@@ -29844,7 +29857,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43715" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39623" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

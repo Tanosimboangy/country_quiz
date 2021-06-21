@@ -10,11 +10,13 @@ function Quizz({
   number,
 }) {
   return (
-    <div className='container'>
+    <div className='wrapper'>
       {number === 0 && (
-        <header>
-          <img src={randomCountry.flag} />
-          <h3>Which country does this flag belong to?</h3>
+        <header className='header'>
+          <img className='header_image' src={randomCountry.flag} />
+          <h3 className='header_text'>
+            Which country does this flag belong to?
+          </h3>
         </header>
       )}
       {number === 1 && <h3>{randomCountry.capital} is the the capital of </h3>}
