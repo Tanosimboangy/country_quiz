@@ -36,7 +36,7 @@ body {
   background-repeat: no-repeat;
   background-size: 100% 100%;
   position: relative;
-  height: 720px;
+  height: 850px;
   margin: 0;
   a {
     text-decoration: none;
@@ -93,6 +93,8 @@ body {
             position: relative;
             display: flex;
             flex-direction: column;
+            font-family: 'Poppins';
+            font-style: normal;
             .header {
               .header_image {
                 max-width: 84px;
@@ -103,8 +105,6 @@ body {
                 border-radius: 5px;
               }
               .header_text {
-                font-family: 'Poppins';
-                font-style: normal;
                 font-weight: bold;
                 font-size: 24px;
                 line-height: 30px;
@@ -114,8 +114,6 @@ body {
               }
             }
             .random_capital--question {
-              font-family: 'Poppins';
-              font-style: normal;
               font-weight: bold;
               font-size: 24px;
               line-height: 36px;
@@ -186,7 +184,7 @@ body {
             width: 32%;
             height: 44%;
             position: absolute;
-            top: -27%;
+            top: -25%;
             left: 68%;
             background-image: url('./img/undraw_adventure.svg');
             background-position: right 100%;
@@ -201,6 +199,8 @@ body {
             justify-content: center;
             background-color: white;
             border-radius: 24px;
+            font-family: 'Poppins';
+            font-style: normal;
             .result_image {
               padding-top: 24px;
               padding-bottom: 60px;
@@ -209,24 +209,18 @@ body {
               width: 100%;
             }
             .result_title {
-              font-family: 'Poppins';
-              font-style: normal;
               font-weight: bold;
               font-size: 40px;
               line-height: 60px;
               color: #1d355d;
             }
             .result_text {
-              font-family: 'Poppins';
-              font-style: normal;
               font-weight: normal;
               font-size: 18px;
               line-height: 27px;
               color: #1d355d;
               padding-bottom: 60px;
               span {
-                font-family: 'Poppins';
-                font-style: normal;
                 font-weight: bold;
                 font-size: 36px;
                 line-height: 44px;
@@ -287,6 +281,47 @@ body {
   }
 }
 
+@media (max-width: 220px) {
+  body {
+    #root {
+      .container {
+        .sub_container {
+          .quiz_wrapper {
+            .result_container {
+              .result_title {
+                font-size: 20px;
+                line-height: 30px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  body {
+    #root {
+      .container {
+        .sub_container {
+          .quiz_wrapper {
+            .title {
+              margin: 0 16px 0 16px;
+            }
+            .wrapper {
+              margin: 16px;
+              .answers button {
+                padding-left: 64px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 500px) {
   body {
     #root {
@@ -298,36 +333,9 @@ body {
             }
             .wrapper {
               margin: 16px;
-              .header {
-                .header_image {
-                }
-                .header_text {
-                }
-              }
-              .random_capital--question {
-              }
-              .answers {
-              }
-              .answers button:first-of-type::before {
-              }
-              .answers button:nth-of-type(2)::before {
-              }
-              .answers button:nth-of-type(3)::before {
-              }
-              .answers button:nth-of-type(4)::before {
-              }
-              .answers button {
-              }
-              .nextBtn {
-              }
             }
-            .wrapper::before {
-            }
-          }
-          .start_container {
-            .title_for_startBtn {
-            }
-            .startBtn {
+            .result_container {
+              margin: 0 16px 0 16px;
             }
           }
         }

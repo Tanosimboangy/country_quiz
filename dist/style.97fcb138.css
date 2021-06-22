@@ -28,7 +28,7 @@ body {
   background-repeat: no-repeat;
   background-size: 100% 100%;
   position: relative;
-  height: 720px;
+  height: 850px;
   margin: 0; }
   body a {
     text-decoration: none; }
@@ -76,7 +76,9 @@ body {
         background-color: white;
         position: relative;
         display: flex;
-        flex-direction: column; }
+        flex-direction: column;
+        font-family: 'Poppins';
+        font-style: normal; }
         body #root .container .sub_container .quiz_wrapper .wrapper .header .header_image {
           max-width: 84px;
           height: 54px;
@@ -85,8 +87,6 @@ body {
           box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.3);
           border-radius: 5px; }
         body #root .container .sub_container .quiz_wrapper .wrapper .header .header_text {
-          font-family: 'Poppins';
-          font-style: normal;
           font-weight: bold;
           font-size: 24px;
           line-height: 30px;
@@ -94,8 +94,6 @@ body {
           color: #1d355d;
           margin-bottom: 20px; }
         body #root .container .sub_container .quiz_wrapper .wrapper .random_capital--question {
-          font-family: 'Poppins';
-          font-style: normal;
           font-weight: bold;
           font-size: 24px;
           line-height: 36px;
@@ -157,7 +155,7 @@ body {
         width: 32%;
         height: 44%;
         position: absolute;
-        top: -27%;
+        top: -25%;
         left: 68%;
         background-image: url("/undraw_adventure.be647353.svg");
         background-position: right 100%;
@@ -170,7 +168,9 @@ body {
         align-items: center;
         justify-content: center;
         background-color: white;
-        border-radius: 24px; }
+        border-radius: 24px;
+        font-family: 'Poppins';
+        font-style: normal; }
         body #root .container .sub_container .quiz_wrapper .result_container .result_image {
           padding-top: 24px;
           padding-bottom: 60px;
@@ -178,23 +178,17 @@ body {
           height: auto;
           width: 100%; }
         body #root .container .sub_container .quiz_wrapper .result_container .result_title {
-          font-family: 'Poppins';
-          font-style: normal;
           font-weight: bold;
           font-size: 40px;
           line-height: 60px;
           color: #1d355d; }
         body #root .container .sub_container .quiz_wrapper .result_container .result_text {
-          font-family: 'Poppins';
-          font-style: normal;
           font-weight: normal;
           font-size: 18px;
           line-height: 27px;
           color: #1d355d;
           padding-bottom: 60px; }
           body #root .container .sub_container .quiz_wrapper .result_container .result_text span {
-            font-family: 'Poppins';
-            font-style: normal;
             font-weight: bold;
             font-size: 36px;
             line-height: 44px;
@@ -242,11 +236,26 @@ body {
           border-radius: 12px;
           background-color: #ffffff; }
 
+@media (max-width: 220px) {
+  body #root .container .sub_container .quiz_wrapper .result_container .result_title {
+    font-size: 20px;
+    line-height: 30px; } }
+
+@media (max-width: 350px) {
+  body #root .container .sub_container .quiz_wrapper .title {
+    margin: 0 16px 0 16px; }
+  body #root .container .sub_container .quiz_wrapper .wrapper {
+    margin: 16px; }
+    body #root .container .sub_container .quiz_wrapper .wrapper .answers button {
+      padding-left: 64px; } }
+
 @media (max-width: 500px) {
   body #root .container .sub_container .quiz_wrapper .title {
     margin: 0 16px 0 16px; }
   body #root .container .sub_container .quiz_wrapper .wrapper {
-    margin: 16px; } }
+    margin: 16px; }
+  body #root .container .sub_container .quiz_wrapper .result_container {
+    margin: 0 16px 0 16px; } }
 
 
 /*# sourceMappingURL=/style.97fcb138.css.map */
