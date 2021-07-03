@@ -1,58 +1,41 @@
 # Country Quiz
 
-### I have built this for anyone who is intersted in learning while having fun to know all of the names of the countries around the world. If you want to challenge yourself and extend your knowledge about the world, this is the rigth path for you to take.
+I built this app for anyone who is intersted in learning while having fun to improve your geographical knowledge.
 
-### You can follow the brief description about this project, in order to know about what it does, how it works, and how to use it.
+## User stories
 
-### Please have a great time while playing this game. This is the link to the netlify to play it:  
-## **https://country-quiz-project.netlify.app/**
+- There are two types of questions: A city is the capital of ..., and a flag belongs to ....
+- User can select one of the options.
+- If the user's answer is correct, the next question will be displayed, otherwise user can see the result and try again.
 
-<h1 align="center">Country Quiz Project</h1>
+## Built With
 
-<div align="center">
-  <h3>
-    <a href="https://{https://country-quiz-project.netlify.app/}">
-      Demo
-    </a>
-    <span> | </span>
-    <a href="https://{https://github.com/Tanosimboangy/country-quiz}">
-      Solution
-    </a>
-  </h3>
-</div>
+[React](https://reactjs.org/)
 
-# *Overview:*
+## Screenshots
 
-![screenshot](./Screenshot/img1.png)
-![screenshot](./Screenshot/img2.png)
-![screenshot](./Screenshot/img3.png)
-![screenshot](./Screenshot/img4.png)
+![screenshot](./screenshot/img1.png)
+![screenshot](./screenshot/img2.png)
+![screenshot](./screenshot/img3.png)
+![screenshot](./screenshot/img4.png)
 
-# *Yuo can see my demo here:*
-- You can see my demo in this following link: [https://country-quiz-project.netlify.app/](https://country-quiz-project.netlify.app/).
+## How To Use
 
-# *My experience:*
+To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
 
- - Despite of the fact that I encountered a lot of struggles while creating this app, I am very proud that I could handle it.
+```bash
+# Clone this repository
+$ git clone https://github.com/Tanosimboangy/country_quiz
 
- - Firstly, I fetched all of the data through this API [https://restcountries.eu/rest/v2/all](https://restcountries.eu/rest/v2/all). At first, I had a problem with my dependecy, because I did not have the browserslist in there, but as soon as I implemented this "browserslist" in my dependency it worked.
+# Install dependencies
+$ npm install or
+$ yarn install
 
-- Something I have never used before but I applied in this project is importing an image. Import the image as if you are to import a component so that you can use that filename inside of the source. This is quite interesting because it helps you to maintain your code clean and easily to understand.
+# Run the app
+$ npm start or
+$ yarn start
+```
 
-# *Anything I have learned/improved:*
+## Live app
 
-- While doing this project, I leanred: firstly, using all the ways to deal with an array, such as find(), map() and filter().
-
-- Apart from that, I starated to fully understand more about how to use Router and and Switch, as well as Link, and how they work.
-
-# *My wisdom:*
-
-- In the face of bugs, I tried to do my best to fully understand what is going on before asking for help from google or anyone.
-
-- I tried to rely on google, I did a lot of research during while fulfilling this task.
-
-
-# *Contact :*
-
-- ## Portfolio [My portfolio](https://cocky-hermann-e30656.netlify.app/)
-- ## GitHub [Tanosimboangy](https://github.com/Tanosimboangy)
+[country_quiz]()
