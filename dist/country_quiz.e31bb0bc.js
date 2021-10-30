@@ -23123,18 +23123,18 @@ if ("development" !== "production") {
 
                   if (renderState.tail === null && renderState.tailMode === 'hidden' && !renderedTail.alternate && !getIsHydrating() // We don't cut it if we're hydrating.
                   ) {
-                      // We need to delete the row we just rendered.
-                      // Reset the effect list to what it was before we rendered this
-                      // child. The nested children have already appended themselves.
-                      var lastEffect = workInProgress.lastEffect = renderState.lastEffect; // Remove any effects that were appended after this point.
+                    // We need to delete the row we just rendered.
+                    // Reset the effect list to what it was before we rendered this
+                    // child. The nested children have already appended themselves.
+                    var lastEffect = workInProgress.lastEffect = renderState.lastEffect; // Remove any effects that were appended after this point.
 
-                      if (lastEffect !== null) {
-                        lastEffect.nextEffect = null;
-                      } // We're done.
+                    if (lastEffect !== null) {
+                      lastEffect.nextEffect = null;
+                    } // We're done.
 
 
-                      return null;
-                    }
+                    return null;
+                  }
                 } else if ( // The time it took to render last row is greater than the remaining
                 // time we have to render. So rendering one more row would likely
                 // exceed it.
@@ -29593,7 +29593,7 @@ function Quizz({
     className: "header"
   }, /*#__PURE__*/_react.default.createElement("img", {
     className: "header_image",
-    src: randomCountry.flag
+    src: randomCountry.flags.svg && randomCountry.flags.svg
   }), /*#__PURE__*/_react.default.createElement("h3", {
     className: "header_text"
   }, "Which country does this flag belong to?")), number === 1 && /*#__PURE__*/_react.default.createElement("h3", {
@@ -29603,22 +29603,22 @@ function Quizz({
   }, /*#__PURE__*/_react.default.createElement("button", {
     value: randomAnswerOption[0],
     onClick: handleClick,
-    ref: randomAnswerOption[0] === randomCountry.name ? rightAnswer : null,
+    ref: randomAnswerOption[0] === randomCountry.name.official ? rightAnswer : null,
     disabled: IsNext
   }, randomAnswerOption[0]), /*#__PURE__*/_react.default.createElement("button", {
     value: randomAnswerOption[1],
     onClick: handleClick,
-    ref: randomAnswerOption[1] === randomCountry.name ? rightAnswer : null,
+    ref: randomAnswerOption[1] === randomCountry.name.official ? rightAnswer : null,
     disabled: IsNext
   }, randomAnswerOption[1]), /*#__PURE__*/_react.default.createElement("button", {
     value: randomAnswerOption[2],
     onClick: handleClick,
-    ref: randomAnswerOption[2] === randomCountry.name ? rightAnswer : null,
+    ref: randomAnswerOption[2] === randomCountry.name.official ? rightAnswer : null,
     disabled: IsNext
   }, randomAnswerOption[2]), /*#__PURE__*/_react.default.createElement("button", {
     value: randomAnswerOption[3],
     onClick: handleClick,
-    ref: randomAnswerOption[3] === randomCountry.name ? rightAnswer : null,
+    ref: randomAnswerOption[3] === randomCountry.name.official ? rightAnswer : null,
     disabled: IsNext
   }, randomAnswerOption[3])), IsNext && /*#__PURE__*/_react.default.createElement("button", {
     className: "nextBtn",
@@ -29717,7 +29717,7 @@ function App() {
   const correctAnswer = (0, _react.useRef)(null);
 
   async function fetchCountries() {
-    const res = await fetch('https://restcountries.eu/rest/v2/all');
+    const res = await fetch('https://restcountries.com/v3.1/all');
     const country = await res.json();
     setCountries(country);
   }
@@ -29738,7 +29738,7 @@ function App() {
     const answerOption1 = countries[Math.floor(Math.random() * countries.length)];
     const answerOption2 = countries[Math.floor(Math.random() * countries.length)];
     const answerOption3 = countries[Math.floor(Math.random() * countries.length)];
-    const answerOptions = [random.name, answerOption1.name, answerOption2.name, answerOption3.name];
+    const answerOptions = [random.name.official, answerOption1.name.official, answerOption2.name.official, answerOption3.name.official];
     answerOptions.sort(() => {
       return 0.5 - Math.random();
     });
@@ -29749,7 +29749,7 @@ function App() {
   function handleClick(e) {
     const event = e.target;
 
-    if (event.value === randomCountry.name) {
+    if (event.value === randomCountry.name.official) {
       setIsNext(true);
       event.style.backgroundColor = '#60BF88';
       event.style.color = 'white';
@@ -29872,7 +29872,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33111" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33163" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

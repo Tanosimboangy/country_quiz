@@ -18,10 +18,11 @@ function App() {
   const correctAnswer = useRef(null)
 
   async function fetchCountries() {
-    const res = await fetch('https://restcountries.eu/rest/v2/all')
+    const res = await fetch('https://restcountries.com/v3.1/all')
     const country = await res.json()
     setCountries(country)
   }
+
 
   useEffect(() => {
     fetchCountries()
@@ -41,22 +42,21 @@ function App() {
     const answerOption3 =
       countries[Math.floor(Math.random() * countries.length)]
     const answerOptions = [
-      random.name,
-      answerOption1.name,
-      answerOption2.name,
-      answerOption3.name,
+      random.name.official,
+      answerOption1.name.official,
+      answerOption2.name.official,
+      answerOption3.name.official,
     ]
     answerOptions.sort(() => {
       return 0.5 - Math.random()
     })
-
     setRandomCountry(random)
     setRandomAnswerOption(answerOptions)
   }
 
   function handleClick(e) {
     const event = e.target
-    if (event.value === randomCountry.name) {
+    if (event.value === randomCountry.name.official) {
       setIsNext(true)
       event.style.backgroundColor = '#60BF88'
       event.style.color = 'white'
